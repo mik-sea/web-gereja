@@ -37,11 +37,26 @@ class Home extends BaseController
 			// setting session agar session dapat dipanggil di file manapun
 			$session->set($ses_data);
 			return redirect()->to('/dashboardAdmin');
+		}else{
+			return redirect()->to('/admin');
 		}
 	}
 	public function dashboardAdmin()
 	{
-		print_r(session()->get("tipe"));
+		$session = session();
+		if($session->get("tipe") == "superadmin"){
+			return view("indexAdmin.php");
+		}else if($session->get("tipe") == "admin"){
+			echo "tampilan admin";
+		}else if($session->get("tipe") == "user"){
+			echo "tampilan user";
+		}else{
+			echo "anda belum login";
+		}
+	}
+	public function logout(){
+		session()->destroy();
+		return redirect()->to("/");
 	}
 	//--------------------------------------------------------------------
 
