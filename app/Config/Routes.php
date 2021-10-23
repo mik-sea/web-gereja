@@ -35,6 +35,8 @@ $routes->get('/admin','Home::prevLoginAdmin');
 $routes->post('/loginAdmin','Home::loginAdmin');
 $routes->get('/dashboardAdmin','Home::dashboardAdmin');
 
+
+$routes->get('/logout','Home::logout');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
