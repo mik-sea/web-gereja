@@ -79,9 +79,43 @@
 
                         </ul>
                     </li>
-                    <li><a href="services.html">Jemaat</a></li>
-                    <li><a href="portfolio.html">Kegiatan Resort</a></li>
-                    <li><a href="team.html">Renungan</a></li>
+                    <li class="dropdown"><a href="#"><span>Jemaat</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Jakarta</a></li>
+                            <li><a href="#">Cikarang</a></li>
+                            <li><a href="#">Depok</a></li>
+                            <li><a href="#">Tangerang</a></li>
+                            <li><a href="#">Bandung</a></li>
+                            <li><a href="#">Bandung Timur</a></li>
+                            <li><a href="#">Sepatan</a></li>
+                            <li><a href="#">Sawangan</a></li>
+                            <li><a href="#">Bekasi</a></li>
+                            <li><a href="#">Bandung Selatan</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Kegiatan Resort</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Rapat</a></li>
+                            <li><a href="#">Ibadah Raya Jemaat</a></li>
+                            <li><a href="#">Kegiatan Komisi</a></li>
+                            <li><a href="#">Hari Besar Gereja ONKP</a></li>
+                            <li><a href="#">Natal</a></li>
+                            <li><a href="#">Katekisasi</a></li>
+                            <li><a href="#">Baptisan Kudus</a></li>
+                            <li><a href="#">Pemberkatan Nikah</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Kegiatan Resort</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Buku Renungan</a></li>
+                            <li><a href="#">Sudut Pandang</a></li>
+
+
+                        </ul>
+                    </li>
                     <li><a href="pricing.html">Hubungi Kami</a></li>
                     <!-- <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -245,14 +279,15 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong><span>Eterna</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Gereja ONKP Resort Jawa </span><?php $thn = date('Y');
+                                                                                echo $thn; ?></strong>
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
             </div>
         </div>
     </footer><!-- End Footer -->
