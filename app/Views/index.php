@@ -1,40 +1,143 @@
 <?= $this->extend('templateUser/tema'); ?>
 <?= $this->section('konten'); ?>
 <!-- ======= Featured Section ======= -->
-<section id="featured" class="featured">
+<section id="team" class="team">
     <div class="container">
+        <div class="section-title">
+            <h2>Pendeta Resort</h2>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="icon-box">
-                    <i class="bi bi-card-checklist"></i>
-                    <h3><a href="">Lorem Ipsum</a></h3>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+        </div>
+        <div class="row justify-content-center">
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="member" style="max-height: 50%;">
+                    <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                    <h4>Walter White</h4>
+                    <span>Chief Executive Officer</span>
+                    <p>
+                        Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                    </p>
+                    <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                    </a>
+
                 </div>
             </div>
-            <div class="col-lg-4 mt-4 mt-lg-0">
-                <div class="icon-box">
-                    <i class="bi bi-bar-chart"></i>
-                    <h3><a href="">Dolor Sitema</a></h3>
-                    <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-                </div>
-            </div>
-            <div class="col-lg-4 mt-4 mt-lg-0">
-                <div class="icon-box">
-                    <i class="bi bi-binoculars"></i>
-                    <h3><a href="">Sed ut perspiciatis</a></h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <div class="col-lg-8 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="member">
+                                <img src="/templateUser/assets/img/team/team-1.jpg" alt="">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+
+                                <a href="#" class="btn btn-primary btn-sm" style="border-radius: 20px;"> Lihat Selengkapnya
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-
-    </div>
 </section><!-- End Featured Section -->
 
 <!-- ======= About Section ======= -->
 <section id="about" class="about">
     <div class="container">
+        <div class="section-title">
+            <h2>Sejarah ONKP Resort Jawa</h2>
 
+        </div>
         <div class="row">
             <div class="col-lg-6">
                 <img src="/templateUser/assets/img/about.jpg" class="img-fluid" alt="">
@@ -64,7 +167,10 @@
 <!-- ======= Services Section ======= -->
 <section id="services" class="services">
     <div class="container">
+        <div class="section-title">
+            <h2>Live Stream Ibadah</h2>
 
+        </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="icon-box">
@@ -124,8 +230,8 @@
     <div class="container">
 
         <div class="section-title">
-            <h2>Clients</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <h2>Jadwal Ibadah</h2>
+
         </div>
 
         <div class="clients-slider swiper">

@@ -60,7 +60,7 @@
             <div class="logo">
                 <!-- <h1><a href="">ONKP Resort Jawa</a></h1> -->
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <h1> <a href="index.html"><img src="/templateUser/assets/img/logo.png" alt="" class="img-fluid"> ONKP Resort Jawa</a></h1>
+                <h1> <a href="<?= base_url('/') ?>"><img src="/templateUser/assets/img/logo.png" alt="" class="img-fluid"> ONKP Resort Jawa</a></h1>
             </div>
 
             <nav id="navbar" class="navbar">
@@ -211,7 +211,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
-        <div class="footer-newsletter">
+        <!-- <div class="footer-newsletter">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -225,7 +225,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="footer-top">
             <div class="container">
