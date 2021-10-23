@@ -67,7 +67,22 @@ $session = session();
                                     <a href="/tambahAnggota">Tambah Anggota</a>
                                 </li>
                                 <li>
+                                    <a href="/anggotaAllRegion">Anggota</a>
+                                </li>
+                                <li>
                                     <a href="/verifikasiAnggota">Verifikasi Anggota</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Postingan</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="#">Jadwal All Region</a>
+                                </li>
+                                <li>
+                                    <a href="#">Artikel All Region</a>
                                 </li>
                             </ul>
                         </li>

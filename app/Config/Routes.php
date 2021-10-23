@@ -34,7 +34,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/admin','Home::prevLoginAdmin');
 $routes->post('/loginAdmin','Home::loginAdmin');
 $routes->get('/dashboardAdmin','Home::dashboardAdmin');
-
+$routes->get('/anggotaAllRegion','Home::anggotaAllRegion');
 
 $routes->get('/logout','Home::logout');
 /**
