@@ -66,12 +66,24 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li class="dropdown"><a href="#"><span>Tentang ONKP</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Visi & Misi</a></li>
+                            <li><a href="#">Sejarah</a></li>
+                            <li><a href="#">Struktur Majelis</a></li>
+                            <li><a href="#">Keanggotaan</a></li>
+                            <li><a href="#">Tata Gereja</a></li>
+                            <li><a href="#">Perikopen ONKP</a></li>
+                            <li><a href="#">Agende/Liturgi ONKP</a></li>
+                            <li><a href="#">Buku Zinuno / Kidung Jemaat</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="services.html">Jemaat</a></li>
+                    <li><a href="portfolio.html">Kegiatan Resort</a></li>
+                    <li><a href="team.html">Renungan</a></li>
+                    <li><a href="pricing.html">Hubungi Kami</a></li>
+                    <!-- <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Drop Down 1</a></li>
@@ -89,7 +101,7 @@
                             <li><a href="#">Drop Down 4</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li> -->
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
