@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Eterna Bootstrap Template - Index</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title><?= $title; ?></title>
+    <meta content="Gereja ONKP Resort Jawa" name="description">
+    <meta content="ONKP Resort Jawa" name="keywords">
 
     <!-- Favicons -->
     <link href="/templateUser/assets/img/favicon.png" rel="icon">
@@ -58,9 +58,9 @@
         <div class="container d-flex justify-content-between align-items-center">
 
             <div class="logo">
-                <h1><a href="index.html">Eterna</a></h1>
+                <!-- <h1><a href="">ONKP Resort Jawa</a></h1> -->
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html"><img src="/templateUser/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+                <h1> <a href="index.html"><img src="/templateUser/assets/img/logo.png" alt="" class="img-fluid"> ONKP Resort Jawa</a></h1>
             </div>
 
             <nav id="navbar" class="navbar">
