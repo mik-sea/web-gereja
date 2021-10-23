@@ -164,6 +164,131 @@
     </div>
 </section><!-- End About Section -->
 
+
+
+<!-- ======= Testimonials Section ======= -->
+<section id="testimoni" class="testimonials">
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Jemaat Resort Jawa</h2>
+
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+            <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">11200</span>
+                            <p><strong>Total Jemaat Resort Jawa</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">1150</span>
+                            <p><strong>Jemaat Jakarta</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">240</span>
+                            <p><strong>Jemaat Cikarang</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">560</span>
+                            <p><strong>Jemaat Depok</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">660</span>
+                            <p><strong>Jemaat Tangerang</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">657</span>
+                            <p><strong>Jemaat Bandung</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">560</span>
+                            <p><strong>Jemaat Bandung Timur</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">879</span>
+                            <p><strong>Jemaat Sepatan</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">123</span>
+                            <p><strong>Jemaat Sawangan</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <div class="count-box">
+
+                            <span id="angka">178</span>
+                            <p><strong>Jemaat Bandung Selatan</strong></p>
+                            <a href="#">Lihat Selengkapnya &raquo;</a>
+                        </div>
+                    </div>
+                </div><!-- End testimonial item -->
+
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+</section>
+
+
 <!-- ======= Services Section ======= -->
 <section id="services" class="services">
     <div class="container">
@@ -250,5 +375,7 @@
 
     </div>
 </section><!-- End Clients Section -->
+
+
 
 <?= $this->endSection(); ?>
