@@ -66,7 +66,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="active" href="index.html">Home</a></li>
-                    <li class="dropdown"><a href="#"><span>Tentang ONKP</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Visi & Misi</a></li>
                             <li><a href="#">Sejarah</a></li>
@@ -94,7 +94,7 @@
 
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Kegiatan Resort</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Kegiatan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Rapat</a></li>
                             <li><a href="#">Ibadah Raya Jemaat</a></li>
@@ -108,7 +108,7 @@
 
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Kegiatan Resort</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Renungan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="#">Buku Renungan</a></li>
                             <li><a href="#">Sudut Pandang</a></li>
@@ -117,6 +117,7 @@
                         </ul>
                     </li>
                     <li><a href="pricing.html">Hubungi Kami</a></li>
+                    <li> <a href="#" class="btn btn-sm btn-primary mx-4 p-1 px-3" style="color: white;">Login</a></li>
                     <!-- <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
@@ -137,6 +138,9 @@
                     </li>
                     <li><a href="contact.html">Contact</a></li> -->
                 </ul>
+
+
+
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
