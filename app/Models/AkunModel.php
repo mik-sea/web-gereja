@@ -10,6 +10,10 @@ class AkunModel extends Model{
     }
     public function cekAkun($user,$password){
         $where = "username='$user' AND password='$password'";
-        return $this->select("id_akun,nama_lengkap,username,password,foto_profil,email,tipe")->where($where)->first();
+        return $this->select("id_akun,nama_lengkap,username,foto_profil,email,tipe")->where($where)->first();
+    }
+    public function cek_sesi($id_akun){
+        $where = "id_akun='$id_akun'";
+        return $this->select("id_akun,nama_lengkap,username,foto_profil,email,tipe")->where($where)->first();
     }
 }

@@ -255,7 +255,7 @@ $session = session();
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="/<?php echo $session->get("foto_profil"); ?>" alt="Foto Profil" />
+                                            <img src="/<?php echo $session->get("foto_profil")?$session->get("foto_profil") :'images/default.jpg'; ?>" alt="Foto Profil" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?php echo $session->get("nama_lengkap"); ?></a>
@@ -264,7 +264,7 @@ $session = session();
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="/<?php echo $session->get("foto_profil"); ?>" alt="John Doe" />
+                                                        <img src="/<?php echo $session->get("foto_profil")?$session->get("foto_profil") :'images/default.jpg'; ?>" alt="foto profil" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

@@ -30,7 +30,6 @@ class Home extends BaseController
 				'id_akun' => $data["id_akun"],
 				'nama_lengkap' => $data["nama_lengkap"],
 				"username" => $data["username"],
-				"password" => $data["password"],
 				"foto_profil" => $data["foto_profil"],
 				"email" => $data["email"],
 				"tipe" => $data["tipe"]
@@ -46,6 +45,23 @@ class Home extends BaseController
 	{
 		$session = session();
 		if ($session->get("tipe") == "superadmin") {
+			$AkunModel = new AkunModel();
+			$data = $AkunModel->cek_sesi($session->get("id_akun"));
+			if($data){
+				$ses_data = [
+					'id_akun' => $data["id_akun"],
+					'nama_lengkap' => $data["nama_lengkap"],
+					"username" => $data["username"],
+					"foto_profil" => $data["foto_profil"],
+					"email" => $data["email"],
+					"tipe" => $data["tipe"]
+				];
+			}else{
+				$session->destroy();
+				return redirect()->to('/admin');
+			}
+			// setting session agar session dapat dipanggil di file manapun
+			$session->set($ses_data);
 			return view("indexAdmin.php");
 		} else if ($session->get("tipe") == "admin") {
 			echo "tampilan admin";
