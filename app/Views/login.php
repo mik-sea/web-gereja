@@ -10,21 +10,21 @@
 
     <!-- Fontfaces CSS-->
     <link href="/templateAdmin/css/font-face.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
-    <link href="/templateAdmin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
-    <!-- Vendor CSS-->
-    <link href="/templateAdmin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <!-- req CSS-->
+    <link href="/templateAdmin/req/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/wow/animate.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
     <link href="/templateAdmin/css/theme.css" rel="stylesheet" media="all">
@@ -39,7 +39,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="/templateAdmin/images/icon/logo.png" alt="CoolAdmin">
+                                <img src="/templateUser/assets/img/logo.png" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
@@ -77,24 +77,24 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="/templateAdmin/vendor/jquery-3.2.1.min.js"></script>
+    <script src="/templateAdmin/req/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="/templateAdmin/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="/templateAdmin/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="/templateAdmin/vendor/slick/slick.min.js">
+    <script src="/templateAdmin/req/bootstrap-4.1/popper.min.js"></script>
+    <script src="/templateAdmin/req/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- req JS       -->
+    <script src="/templateAdmin/req/slick/slick.min.js">
     </script>
-    <script src="/templateAdmin/vendor/wow/wow.min.js"></script>
-    <script src="/templateAdmin/vendor/animsition/animsition.min.js"></script>
-    <script src="/templateAdmin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    <script src="/templateAdmin/req/wow/wow.min.js"></script>
+    <script src="/templateAdmin/req/animsition/animsition.min.js"></script>
+    <script src="/templateAdmin/req/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <script src="/templateAdmin/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="/templateAdmin/vendor/counter-up/jquery.counterup.min.js">
+    <script src="/templateAdmin/req/counter-up/jquery.waypoints.min.js"></script>
+    <script src="/templateAdmin/req/counter-up/jquery.counterup.min.js">
     </script>
-    <script src="/templateAdmin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="/templateAdmin/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="/templateAdmin/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="/templateAdmin/vendor/select2/select2.min.js">
+    <script src="/templateAdmin/req/circle-progress/circle-progress.min.js"></script>
+    <script src="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/templateAdmin/req/chartjs/Chart.bundle.min.js"></script>
+    <script src="/templateAdmin/req/select2/select2.min.js">
     </script>
 
     <!-- Main JS-->
