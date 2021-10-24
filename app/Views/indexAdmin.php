@@ -3,6 +3,7 @@
 <?php
 $session = session();
 ?>
+
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -42,7 +43,7 @@ $session = session();
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="/dashboardAdmin">
-                            <img src="/templateUser/assets/img/logo.png" alt="CoolAdmin" width="70px"/>
+                            <img src="/templateUser/assets/img/logo.png" alt="CoolAdmin" width="70px" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -99,7 +100,7 @@ $session = session();
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="/dashboardAdmin">
-                    <img src="/templateUser/assets/img/logo.png" alt="ONKP admin" width="70px"/>
+                    <img src="/templateUser/assets/img/logo.png" alt="ONKP admin" width="70px" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -163,52 +164,52 @@ $session = session();
                                 </button>
                             </form>
                             <!-- end searching -->
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="/<?php echo $session->get("foto_profil")?$session->get("foto_profil") :'images/default.jpg'; ?>" alt="Foto Profil" />
+                            <div class="account-wrap">
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="/<?php echo $session->get("foto_profil") ? $session->get("foto_profil") : 'images/default.jpg'; ?>" alt="Foto Profil" />
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#"><?php echo $session->get("nama_lengkap"); ?></a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="/<?php echo $session->get("foto_profil") ? $session->get("foto_profil") : 'images/default.jpg'; ?>" alt="foto profil" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#"><?php echo $session->get("nama_lengkap"); ?></a>
+                                                </h5>
+                                                <span class="email"><?php echo $session->get("email"); ?></span>
+                                            </div>
                                         </div>
-                                        <div class="content">
-                                            <a class="js-acc-btn" href="#"><?php echo $session->get("nama_lengkap"); ?></a>
+                                        <div class="account-dropdown__body">
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-account"></i>Account</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                            </div>
                                         </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="/<?php echo $session->get("foto_profil")?$session->get("foto_profil") :'images/default.jpg'; ?>" alt="foto profil" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#"><?php echo $session->get("nama_lengkap"); ?></a>
-                                                    </h5>
-                                                    <span class="email"><?php echo $session->get("email"); ?></span>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="/logout">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="/logout">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </header>
             <!-- HEADER DESKTOP-->
 
