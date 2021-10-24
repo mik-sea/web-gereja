@@ -105,7 +105,7 @@ $session = session();
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active">
+                        <li>
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
@@ -124,11 +124,11 @@ $session = session();
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-pencil-square-o"></i>Postingan</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
+                                <li class="active">
                                     <a href="/tambahPostingan">Tambah Postingan</a>
                                 </li>
                                 <li>
@@ -216,44 +216,83 @@ $session = session();
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="row m-t-25">
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c1">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-account-o"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h2>10368</h2>
-                                                <span>Anggota</span>
-                                            </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart1"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="overview-item overview-item--c2">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>Total Artikel</span>
-                                            </div>
-                                        </div>
-                                        <div class="overview-chart">
-                                            <canvas id="widgetChart2"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Horizontal</strong> Form
                         </div>
+                        <div class="card-body card-block">
+                            <form action="" method="post" class="form-horizontal">
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="hf-judul" class=" form-control-label">Judul</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" id="hf-judul" name="judul" placeholder="Masukkan Judul" class="form-control">
+                                        <span class="help-block">Judul berita/layanan</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="hf-file" class=" form-control-label">Upload Gambar</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" id="hf-file" name="file" class="form-control">
+                                        <span class="help-block">Ext : jpg/png</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="select" class=" form-control-label">Kategori, Jenis</label>
+                                    </div>
+                                        <div class="col-3">
+                                            <select name="select" id="select" class="form-control">
+                                                <!-- data dari database -->
+                                                <option value="0">Please select</option>
+                                                <option value="1">Option #1</option>
+                                                <option value="2">Option #2</option>
+                                                <option value="3">Option #3</option>
+                                            </select>
+                                            <span class="help-block">Kategori</span>
+                                        </div>
+                                        <div class="col-3">
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="0">Please select</option>
+                                                <option value="1">Option #1</option>
+                                                <option value="2">Option #2</option>
+                                                <option value="3">Option #3</option>
+                                            </select>
+                                            <span class="help-block">Jenis</span>
+                                        </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="textarea-input" class=" form-control-label">Ringkasan</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="ringkasan" id="textarea-input" rows="3" placeholder="Content..." class="form-control"></textarea>
+                                        <span class="help-block">Ringkasan berita</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="textarea-input" class=" form-control-label">Isi Berita</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                    <textarea name="isi" class="form-control konten"></textarea>
+                                        <span class="help-block">Isi berita</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fa fa-dot-circle-o"></i> Submit
+                            </button>
+                            <button type="reset" class="btn btn-danger btn-sm">
+                                <i class="fa fa-ban"></i> Reset
+                            </button>
+                        </div>
+                    </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">

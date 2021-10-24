@@ -40,6 +40,7 @@ $routes->get('/kontak', 'Tentang::index');
 $routes->get('/visi-misi', 'Tentang::visiMisi');
 $routes->get('/sejarah', 'Tentang::sejarah');
 $routes->get('/struktur-majelis', 'Tentang::strukturMajelis');
+$routes->get('/tambahPostingan','Postingan::viewTambahPostingan');
 
 $routes->get('/logout', 'Home::logout');
 /**

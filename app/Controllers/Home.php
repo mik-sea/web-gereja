@@ -68,7 +68,8 @@ class Home extends BaseController
 		} else if ($session->get("tipe") == "user") {
 			echo "tampilan user";
 		} else {
-			echo "anda belum login";
+			echo "session abis";
+			return redirect()->to('/admin');
 		}
 	}
 	public function logout()
