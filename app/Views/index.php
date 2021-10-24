@@ -1,5 +1,6 @@
 <?= $this->extend('templateUser/tema'); ?>
 <?= $this->section('konten'); ?>
+<?= $this->include('templateUser/hero'); ?>
 <!-- ======= Featured Section ======= -->
 <section id="team" class="team">
     <div class="container">

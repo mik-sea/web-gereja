@@ -9,7 +9,8 @@ class Home extends BaseController
 	public function index()
 	{
 		$data = [
-			'title' => 'GEREJA ONKP RESORT JAWA'
+			'title' => 'GEREJA ONKP RESORT JAWA',
+			'active' => 'home'
 		];
 		return view('index', $data);
 	}
@@ -37,24 +38,25 @@ class Home extends BaseController
 			// setting session agar session dapat dipanggil di file manapun
 			$session->set($ses_data);
 			return redirect()->to('/dashboardAdmin');
-		}else{
+		} else {
 			return redirect()->to('/admin');
 		}
 	}
 	public function dashboardAdmin()
 	{
 		$session = session();
-		if($session->get("tipe") == "superadmin"){
+		if ($session->get("tipe") == "superadmin") {
 			return view("indexAdmin.php");
-		}else if($session->get("tipe") == "admin"){
+		} else if ($session->get("tipe") == "admin") {
 			echo "tampilan admin";
-		}else if($session->get("tipe") == "user"){
+		} else if ($session->get("tipe") == "user") {
 			echo "tampilan user";
-		}else{
+		} else {
 			echo "anda belum login";
 		}
 	}
-	public function logout(){
+	public function logout()
+	{
 		session()->destroy();
 		return redirect()->to("/");
 	}
