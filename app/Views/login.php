@@ -39,7 +39,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="/templateUser/assets/img/logo.png" alt="CoolAdmin">
+                                <img src="/templateUser/assets/img/logo.png" alt="ONKP admin">
                             </a>
                         </div>
                         <div class="login-form">
