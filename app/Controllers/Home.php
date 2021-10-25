@@ -16,7 +16,7 @@ class Home extends BaseController
 	}
 	public function prevLoginAdmin()
 	{
-		return view("login.php");
+		return view("loginAdmin.php");
 	}
 	public function loginAdmin()
 	{
@@ -38,6 +38,7 @@ class Home extends BaseController
 			$session->set($ses_data);
 			return redirect()->to('/dashboardAdmin');
 		} else {
+			$session->setFlashdata('msgerr', 'Username / Password Salah');
 			return redirect()->to('/admin');
 		}
 	}

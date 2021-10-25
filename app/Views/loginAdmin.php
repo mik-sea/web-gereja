@@ -42,6 +42,13 @@
                                 <img src="/templateUser/assets/img/logo.png" alt="ONKP admin">
                             </a>
                         </div>
+                        <div class="err">
+                        <?php
+                            if(session()->getFlashData('msgerr')){
+                                echo "<div class='alert alert-danger' role='alert'>".session()->getFlashData('msgerr')."</div>";
+                            }
+                        ?>
+                        </div>
                         <div class="login-form">
                             <form action="/loginAdmin" method="post">
                                 <div class="form-group">

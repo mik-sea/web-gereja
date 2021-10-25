@@ -245,21 +245,25 @@ $session = session();
                                         <label for="select" class=" form-control-label">Kategori, Jenis</label>
                                     </div>
                                         <div class="col-3">
-                                            <select name="select" id="select" class="form-control">
+                                            <select name="select" id="kategori" class="form-control" onChange="updateKategori()">
                                                 <!-- data dari database -->
-                                                <option value="0">Please select</option>
-                                                <option value="1">Option #1</option>
-                                                <option value="2">Option #2</option>
-                                                <option value="3">Option #3</option>
+                                                <option disabled>Please select</option>
+                                                <?php
+                                                foreach($kategori as $k){
+                                                ?>
+                                                <option value="<?php echo $k['id_kategori']; ?>"><?php echo $k['nama_kategori']; ?></option>
+                                                <?php }?>
+                                                <option value="addKategori">Tambah kategori</option>
                                             </select>
                                             <span class="help-block">Kategori</span>
                                         </div>
                                         <div class="col-3">
-                                            <select name="select" id="select" class="form-control">
-                                                <option value="0">Please select</option>
-                                                <option value="1">Option #1</option>
-                                                <option value="2">Option #2</option>
-                                                <option value="3">Option #3</option>
+                                            <select name="select" id="jenis" class="form-control" onChange="updateJenis()">
+                                                <option disabled>Please select</option>
+                                                <?php foreach($jenis as $j){?>
+                                                <option value="<?php echo $j['id_jenis']; ?>"><?php echo $j['jenis_kategori'];?></option>
+                                                <?php }?>
+                                                <option value="addJenis">Tambah jenis</option>
                                             </select>
                                             <span class="help-block">Jenis</span>
                                         </div>
@@ -308,7 +312,6 @@ $session = session();
         </div>
 
     </div>
-
     <!-- Jquery JS-->
     <script src="/templateAdmin/req/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
@@ -329,7 +332,24 @@ $session = session();
     <script src="/templateAdmin/req/chartjs/Chart.bundle.min.js"></script>
     <script src="/templateAdmin/req/select2/select2.min.js">
     </script>
-
+    <script>
+        function updateKategori(){
+			var select = document.getElementById('kategori');
+			var option = select.options[select.selectedIndex];
+			if(option.value == "addKategori"){
+                window.location.href = "/admin";
+            }
+		}
+        function updateJenis(){
+			var select = document.getElementById('jenis');
+			var option = select.options[select.selectedIndex];
+            if(option.value == "addJenis"){
+                window.location.href = "/gello";
+            }
+		}
+            updateKategori()
+            updateJenis()
+    </script>
     <!-- Main JS-->
     <script src="/templateAdmin/js/main.js"></script>
 
