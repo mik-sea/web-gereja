@@ -245,25 +245,20 @@ $session = session();
                                         <label for="select" class=" form-control-label">Kategori, Jenis</label>
                                     </div>
                                         <div class="col-3">
-                                            <select name="select" id="kategori" class="form-control" onChange="updateKategori()">
+                                            <select name="select" id="kategori" class="form-control">
                                                 <!-- data dari database -->
-                                                <option disabled>Please select</option>
+                                                <option value="0">Please select</option>
                                                 <?php
-                                                foreach($kategori as $k){
+                                                    foreach($kategori as $k){
                                                 ?>
-                                                <option value="<?php echo $k['id_kategori']; ?>"><?php echo $k['nama_kategori']; ?></option>
+                                                    <option value="<?php echo $k['id_kategori']; ?>"><?php echo $k['nama_kategori']; ?></option>
                                                 <?php }?>
                                                 <option value="addKategori">Tambah kategori</option>
                                             </select>
                                             <span class="help-block">Kategori</span>
                                         </div>
                                         <div class="col-3">
-                                            <select name="select" id="jenis" class="form-control" onChange="updateJenis()">
-                                                <option disabled>Please select</option>
-                                                <?php foreach($jenis as $j){?>
-                                                <option value="<?php echo $j['id_jenis']; ?>"><?php echo $j['jenis_kategori'];?></option>
-                                                <?php }?>
-                                                <option value="addJenis">Tambah jenis</option>
+                                            <select name="select" id="jenis" class="form-control">
                                             </select>
                                             <span class="help-block">Jenis</span>
                                         </div>
@@ -333,22 +328,37 @@ $session = session();
     <script src="/templateAdmin/req/select2/select2.min.js">
     </script>
     <script>
-        function updateKategori(){
-			var select = document.getElementById('kategori');
-			var option = select.options[select.selectedIndex];
-			if(option.value == "addKategori"){
-                window.location.href = "/admin";
+        $("#kategori").change(function(){
+            let id_kategori = $("#kategori").val();
+            if(id_kategori == "addKategori"){
+                console.log("add");
+            }else if(id_kategori == 0){
+                $("#jenis").html(`<option disable></option>`)
             }
-		}
-        function updateJenis(){
-			var select = document.getElementById('jenis');
-			var option = select.options[select.selectedIndex];
-            if(option.value == "addJenis"){
-                window.location.href = "/gello";
+            else{
+                var settings = {
+                    "url": "http://localhost:8080/jenis/"+id_kategori,
+                    "method": "POST",
+                    "timeout": 0,
+                    "dataType": "JSON",
+                };
+
+                $.ajax(settings).done(function(response){
+                    let html;
+                    response.forEach(function(res)
+                    {
+                        html += `<option value='${res.id_jenis}'>${res.jenis_kategori}</option>`
+                    })
+                    $("#jenis").html(`<option>Please select</option>`+html+`<option value='addJenis'>Tambah Jenis</option>`)
+                });
             }
-		}
-            updateKategori()
-            updateJenis()
+        })
+        $("#jenis").change(function(){
+            let id_jenis = $("#jenis").val();
+            if(id_jenis == "addJenis"){
+                console.log("add jenis")
+            }
+        })
     </script>
     <!-- Main JS-->
     <script src="/templateAdmin/js/main.js"></script>

@@ -41,6 +41,7 @@ $routes->get('/visi-misi', 'Tentang::visiMisi');
 $routes->get('/sejarah', 'Tentang::sejarah');
 $routes->get('/struktur-majelis', 'Tentang::strukturMajelis');
 $routes->get('/tambahPostingan','Postingan::viewTambahPostingan');
+$routes->post('/jenis/(:any)','Postingan::showJenis/$1');
 
 $routes->get('/logout', 'Home::logout');
 /**

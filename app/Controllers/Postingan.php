@@ -10,13 +10,15 @@ class Postingan extends BaseController
 {
     public function viewTambahPostingan(){
         $model = new KategoriModel();
-        $jenismodel = new JenisModel();
         $isiKategori = $model->cekKategori();
-        $isiJenis = $jenismodel->cekjenis();
         $data = [
-            "kategori" => $isiKategori,
-            "jenis" => $isiJenis
+            "kategori" => $isiKategori
         ];
         return view("postingan/viewTambahPostingan",$data);
+    }
+    public function showJenis($id_kategori){
+        $jenismodel = new JenisModel();
+        $isiJenis = $jenismodel->cekjenis($id_kategori);
+        return json_encode($isiJenis);
     }
 }
