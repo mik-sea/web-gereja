@@ -274,7 +274,7 @@ $session = session();
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3">
-                                        <label for="textarea-input" class=" form-control-label">Isi Berita</label>
+                                        <label for="textarea-input" class="form-control-label">Isi Berita</label>
                                     </div>
                                     <div class="col-12 col-md-9">
                                     <textarea name="isi" class="form-control konten"></textarea>
@@ -325,7 +325,20 @@ $session = session();
     <script src="/templateAdmin/req/circle-progress/circle-progress.min.js"></script>
     <script src="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="/templateAdmin/req/chartjs/Chart.bundle.min.js"></script>
-    <script src="/templateAdmin/req/select2/select2.min.js">
+    <script src="/templateAdmin/req/select2/select2.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '.konten',
+            menubar: true,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+            ],
+            toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor | link image | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat code',
+            content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+        });
     </script>
     <script>
         $("#kategori").change(function(){
