@@ -326,7 +326,7 @@ $session = session();
     <script src="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="/templateAdmin/req/chartjs/Chart.bundle.min.js"></script>
     <script src="/templateAdmin/req/select2/select2.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/kd99f7gzfv3qqj0h2el42svlfwa47kwpjnz3r60x0edbfmlr/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
             selector: '.konten',
