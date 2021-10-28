@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2021 at 04:30 PM
+-- Generation Time: Oct 28, 2021 at 06:58 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Table structure for table `postingan`
 --
 
-CREATE TABLE `berita` (
+CREATE TABLE `postingan` (
   `id_berita` varchar(20) NOT NULL,
   `id_user` varchar(20) NOT NULL,
   `id_kategori` varchar(20) NOT NULL,
@@ -35,15 +35,11 @@ CREATE TABLE `berita` (
   `judul_berita` varchar(255) NOT NULL,
   `ringkasan` varchar(500) NOT NULL,
   `isi` text NOT NULL,
-  `status_berita` varchar(20) NOT NULL,
   `jenis_berita` varchar(20) NOT NULL,
-  `keywords` text NOT NULL,
   `gambar` varchar(255) DEFAULT NULL,
-  `icon` varchar(255) DEFAULT NULL,
-  `hits` int(11) NOT NULL,
   `tanggal_post` datetime NOT NULL,
-  `tanggal_publish` datetime NOT NULL,
-  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `tanggal_publish` datetime DEFAULT NULL,
+  `status` enum('pending','publish') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -51,9 +47,9 @@ CREATE TABLE `berita` (
 --
 
 --
--- Indexes for table `berita`
+-- Indexes for table `postingan`
 --
-ALTER TABLE `berita`
+ALTER TABLE `postingan`
   ADD PRIMARY KEY (`id_berita`);
 COMMIT;
 
