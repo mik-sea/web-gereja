@@ -9,6 +9,6 @@ class JenisModel extends Model{
         $this->db = db_connect();
     }
     public function cekJenis($id_kategori){
-        return $this->select([$allowedFields])->where("id_kategori",$id_kategori)->findAll();
+        return $this->select("*")->where("id_kategori",$id_kategori)->findAll();
     }
 }

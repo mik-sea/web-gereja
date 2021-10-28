@@ -9,6 +9,6 @@ class KategoriModel extends Model{
         $this->db = db_connect();
     }
     public function cekKategori(){
-        return $this->select([$allowedFields])->findAll();
+        return $this->select("*")->findAll();
     }
 }
