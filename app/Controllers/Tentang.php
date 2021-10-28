@@ -16,7 +16,7 @@ class Tentang extends BaseController
     public function visiMisi()
     {
         $data = [
-            'title' => 'Hubungi Kami',
+            'title' => 'Visi dan Misi',
             'active' => 'visi'
         ];
         return view('tentang/visiMisi', $data);

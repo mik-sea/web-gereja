@@ -32,7 +32,7 @@ class Home extends BaseController
 				"username" => $data["username"],
 				"foto_profil" => $data["foto_profil"],
 				"email" => $data["email"],
-				"tipe" => $data["tipe"]
+				"tipe" => $data["tipe"],
 			];
 			// setting session agar session dapat dipanggil di file manapun
 			$session->set($ses_data);
@@ -48,7 +48,7 @@ class Home extends BaseController
 		if ($session->get("tipe") == "superadmin") {
 			$AkunModel = new AkunModel();
 			$data = $AkunModel->cek_sesi($session->get("id_akun"));
-			if($data){
+			if ($data) {
 				$ses_data = [
 					'id_akun' => $data["id_akun"],
 					'nama_lengkap' => $data["nama_lengkap"],
@@ -57,13 +57,16 @@ class Home extends BaseController
 					"email" => $data["email"],
 					"tipe" => $data["tipe"]
 				];
-			}else{
+			} else {
 				$session->destroy();
 				return redirect()->to('/admin');
 			}
 			// setting session agar session dapat dipanggil di file manapun
 			$session->set($ses_data);
-			return view("indexAdmin.php");
+			$ambil = [
+				'title' => 'Admin ONKP Resort Jawa'
+			];
+			return view("indexAdmin.php", $ambil);
 		} else if ($session->get("tipe") == "admin") {
 			echo "tampilan admin";
 		} else if ($session->get("tipe") == "user") {
