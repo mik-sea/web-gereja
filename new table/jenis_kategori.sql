@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2021 at 04:30 PM
+-- Generation Time: Oct 28, 2021 at 01:01 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -40,7 +40,27 @@ CREATE TABLE `jenis_kategori` (
 --
 
 INSERT INTO `jenis_kategori` (`id_jenis`, `id_kategori`, `slug_jenis`, `jenis_kategori`, `tanggal`) VALUES
-(1, 1, 'ibadah-minggu', 'ibadah minggu', '2021-10-24 21:18:38');
+(3, 1, 'iya', 'iya', '2021-10-28 17:59:37');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `jenis_kategori`
+--
+ALTER TABLE `jenis_kategori`
+  ADD PRIMARY KEY (`id_jenis`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `jenis_kategori`
+--
+ALTER TABLE `jenis_kategori`
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
