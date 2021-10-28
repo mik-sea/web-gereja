@@ -94,4 +94,45 @@ class Postingan extends BaseController
         }
 
     }
+    public function addKategori(){
+        return View("addKategori");
+    }
+    // insert ke table kategori
+    public function toKategori(){
+        $session = session();
+        $judul = $this->request->getVar("kategori");
+        $data = [
+            "id_user" => $session->get("id_akun"),
+            "slug_kategori" => url_title($judul),
+            "nama_kategori" => $judul,
+            "urutan" => "",
+            "hits" => 0,
+            "tanggal" => date("Y-m-d H:i:s")
+        ];
+        $model = new KategoriModel();
+        $model->addKategori($data);
+        return redirect()->back();
+    }
+    public function addJenisKategori(){
+        $session = session();
+        $id_kategori = $this->request->getVar("kategori");
+        $jenis = $this->request->getVar("jenis");
+        $data = [
+            "id_kategori" => $id_kategori,
+            "slug_jenis" => url_title($jenis),
+            "jenis_kategori" => $jenis,
+            "tanggal" => date("Y-m-d H:i:s")
+        ];
+        $models = new JenisModel();
+        $models->addJenis($data);
+        return redirect()->back();
+    }
+    public function addJenis(){
+        $model = new KategoriModel();
+        $isiKategori = $model->cekKategori();
+        $data = [
+            "kategori" => $isiKategori
+        ];
+        return View("addJenis.php",$data);
+    }
 }

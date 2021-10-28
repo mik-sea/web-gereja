@@ -222,11 +222,6 @@ $session = session();
                         </div>
                         <div class="card-body card-block">
                             <form action="/addPostingan" method="post" enctype="multipart/form-data" class="form-horizontal">
-                            <?php
-                                        if(session()->getFlashData('errsql')){
-                                            echo "<div class='alert alert-danger' role='alert'>".session()->getFlashData('errsql')."</div>";
-                                        }
-                                    ?>
                                 <div class="row form-group">
                                     <div class="col col-md-3">
                                         <label for="hf-judul" class=" form-control-label">Judul</label>
@@ -401,7 +396,7 @@ $session = session();
         $("#kategori").change(function(){
             let id_kategori = $("#kategori").val();
             if(id_kategori == "addKategori"){
-                console.log("add");
+                window.location.href = '/addKategori';
             }else if(id_kategori == 0){
                 $("#jenis").html(`<option value="0">Please select</option>`)
             }
@@ -426,7 +421,7 @@ $session = session();
         $("#jenis").change(function(){
             let id_jenis = $("#jenis").val();
             if(id_jenis == "addJenis"){
-                console.log("add jenis")
+                window.location.href = "/addJenis"
             }
         })
     </script>

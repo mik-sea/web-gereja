@@ -11,4 +11,7 @@ class KategoriModel extends Model{
     public function cekKategori(){
         return $this->select("*")->findAll();
     }
+    public function addKategori($data){
+        return $this->db->table("kategori")->insert($data);
+    }
 }

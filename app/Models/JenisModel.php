@@ -11,4 +11,7 @@ class JenisModel extends Model{
     public function cekJenis($id_kategori){
         return $this->select("*")->where("id_kategori",$id_kategori)->findAll();
     }
+    public function addJenis($data){
+        return $this->db->table("jenis_kategori")->insert($data);
+    }
 }
