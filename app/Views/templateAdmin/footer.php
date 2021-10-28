@@ -1,4 +1,5 @@
 <?= $this->renderSection('modal'); ?>
+
 <script src="/templateAdmin/req/jquery-3.2.1.min.js"></script>
 
 <script src="/templateAdmin/req/bootstrap-4.1/popper.min.js"></script>
@@ -26,7 +27,7 @@
 <script src="/templateAdmin/js/main.js"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6a542a5d84424b62","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.10.0","si":100}'></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6a542a5d68634b62","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.10.0","si":100}'></script>
-
+<script src="/templateAdmin/tinymce/js/tinymce/tinymce.min.js"></script>
 <?= $this->renderSection('js'); ?>
 </body>
 

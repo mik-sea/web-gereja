@@ -64,7 +64,8 @@ class Home extends BaseController
 			// setting session agar session dapat dipanggil di file manapun
 			$session->set($ses_data);
 			$ambil = [
-				'title' => 'Admin ONKP Resort Jawa'
+				'title' => 'Admin ONKP Resort Jawa',
+				'active' => 'dashboardAdmin'
 			];
 			return view("indexAdmin.php", $ambil);
 		} else if ($session->get("tipe") == "admin") {

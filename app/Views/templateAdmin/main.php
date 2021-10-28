@@ -75,18 +75,20 @@
             </section> -->
 
 <!-- <section>
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-xl-6">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6">
 
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section> -->
+            </div>
+        </div>
+    </div>
+</section> -->
 
 <?= $this->renderSection('konten'); ?>
+
+
 
 </div>
 </div>

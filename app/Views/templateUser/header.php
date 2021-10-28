@@ -129,7 +129,7 @@
                     <li><a href="<?= base_url('kontak') ?>" class="<?php if ($active == 'kontak') {
                                                                         echo 'active';
                                                                     } ?>">Hubungi Kami</a></li>
-                    <li> <a href="#" class="btn btn-sm btn-primary mx-4 p-1 px-3" style="color: white;">Login</a></li>
+                    <li> <a href="<?= base_url('admin'); ?>" class="btn btn-sm btn-primary mx-4 p-1 px-3" style="color: white;">Login</a></li>
                     <!-- <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
