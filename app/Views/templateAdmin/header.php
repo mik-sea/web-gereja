@@ -12,7 +12,7 @@
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
-                        <img src="/templateAdmin/images/icon/avatar-big-01.jpg" alt="John Doe" />
+                        <img src="<?= session('foto_profil')?session('foto_profil'):"/images/default.jpg"; ?>" alt="foto" />
                     </div>
                     <h4 class="name"><?= session('nama_lengkap'); ?></h4>
                     <a href="<?= base_url('/logout') ?>">Sign out</a>
