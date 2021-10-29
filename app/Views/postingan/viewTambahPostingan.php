@@ -134,7 +134,7 @@
             }
 
             success(json.location);
-            console.log(json);
+            // console.log(json);
         };
 
         xhr.onerror = function() {
