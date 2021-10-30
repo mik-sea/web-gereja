@@ -6,6 +6,9 @@ use App\Models\AkunModel;
 
 class Home extends BaseController
 {
+	public function __construct(){
+		$this->session = session();
+	}
 	public function index()
 	{
 		$data = [
@@ -20,7 +23,7 @@ class Home extends BaseController
 	}
 	public function loginAdmin()
 	{
-		$session = session();
+		// $session = session();
 		$username = $this->request->getVar("username");
 		$password = sha1($this->request->getVar("password"));
 		$AkunModel = new AkunModel();
@@ -35,19 +38,19 @@ class Home extends BaseController
 				"tipe" => $data["tipe"],
 			];
 			// setting session agar session dapat dipanggil di file manapun
-			$session->set($ses_data);
+			$this->session->set($ses_data);
 			return redirect()->to('/dashboardAdmin');
 		} else {
-			$session->setFlashdata('msgerr', 'Username / Password Salah');
+			$this->session->setFlashdata('msgerr', 'Username / Password Salah');
 			return redirect()->to('/admin');
 		}
 	}
 	public function dashboardAdmin()
 	{
-		$session = session();
-		if ($session->get("tipe") == "superadmin") {
+		// $session = session();
+		if ($this->session->get("tipe") == "superadmin") {
 			$AkunModel = new AkunModel();
-			$data = $AkunModel->cek_sesi($session->get("id_akun"));
+			$data = $AkunModel->cek_sesi($this->session->get("id_akun"));
 			if ($data) {
 				$ses_data = [
 					'id_akun' => $data["id_akun"],
@@ -58,22 +61,22 @@ class Home extends BaseController
 					"tipe" => $data["tipe"]
 				];
 			} else {
-				$session->destroy();
+				$this->session->destroy();
 				return redirect()->to('/admin');
 			}
 			// setting session agar session dapat dipanggil di file manapun
-			$session->set($ses_data);
+			$this->session->set($ses_data);
 			$ambil = [
 				'title' => 'Admin ONKP Resort Jawa',
 				'active' => 'dashboardAdmin'
 			];
 			return view("indexAdmin.php", $ambil);
-		} else if ($session->get("tipe") == "admin") {
+		} else if ($this->session->get("tipe") == "admin") {
 			echo "tampilan admin";
-		} else if ($session->get("tipe") == "user") {
+		} else if ($this->session->get("tipe") == "user") {
 			echo "tampilan user";
 		} else {
-			echo "session abis";
+			// echo "session abis";
 			return redirect()->to('/admin');
 		}
 	}

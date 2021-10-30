@@ -3,7 +3,7 @@
 
         <aside class="menu-sidebar2">
             <div class="logo">
-                <a href="#">
+                <a href="<?= base_url('/dashboardAdmin')?>">
                     <img src="/templateAdmin/images/icon/logo-blue.png" alt="Gereja ONKP Resort Jawa" />
 
                 </a>

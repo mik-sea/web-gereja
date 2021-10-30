@@ -10,8 +10,16 @@ use App\Models\JenisModel;
 
 class Postingan extends BaseController
 {
+    public function __construct(){
+		$this->session = session();
+	}
     public function viewTambahPostingan()
     {
+		if ($this->session->get("tipe") == "") {
+			return redirect()->to("/admin");
+		} else if ($this->session->get("tipe") == "user") {
+			return redirect()->to("/");
+		}
         $model = new KategoriModel();
         $isiKategori = $model->cekKategori();
         $data = [
@@ -29,6 +37,11 @@ class Postingan extends BaseController
     }
     public function saveImage()
     {
+		if ($this->session->get("tipe") == "") {
+			return redirect()->to("/admin");
+		} else if ($this->session->get("tipe") == "user") {
+			return redirect()->to("/");
+		}
         $validated = $this->validate([
             'file' => [
                 'uploaded[file]',
@@ -53,7 +66,11 @@ class Postingan extends BaseController
     }
     public function tambahPostingan()
     {
-        $session = session();
+		if ($this->session->get("tipe") == "") {
+			return redirect()->to("/admin");
+		} else if ($this->session->get("tipe") == "user") {
+			return redirect()->to("/");
+		}
         $judul = $this->request->getVar("judul");
         $thumbnail = $this->request->getFile("file");
         $kategori = $this->request->getVar("kategori");
@@ -75,7 +92,7 @@ class Postingan extends BaseController
             $id = $postinganModel->cekIdBerita() + 1;
             $data = [
                 "id_berita" => "b" . $id,
-                "id_user" => $session->get('id_akun'),
+                "id_user" => $this->session->get('id_akun'),
                 "id_kategori" => $kategori,
                 "slug_berita" => url_title($judul),
                 "judul_berita" => $judul,
@@ -90,28 +107,37 @@ class Postingan extends BaseController
             $cek = $postinganModel->addPostingan($data);
             $error = $cek->connID->error;
             if ($error) {
-                $session->setFlashdata('errsql', 'error sql');
+                $this->session->setFlashdata('errsql', 'error sql');
                 return redirect()->back();
             } else {
                 $thumbnail->move('../public/uploads');
                 return redirect()->back();
             }
         } else {
-            $session->setFlashdata('msgerr', 'Format gambar salah!');
+            $this->session->setFlashdata('msgerr', 'Format gambar salah!');
             return redirect()->back()->withInput();
         }
     }
     public function addKategori()
     {
+		if ($this->session->get("tipe") == "") {
+			return redirect()->to("/admin");
+		} else if ($this->session->get("tipe") == "user") {
+			return redirect()->to("/");
+		}
         return View("addKategori");
     }
     // insert ke table kategori
     public function toKategori()
     {
-        $session = session();
+		if ($this->session->get("tipe") == "") {
+			return redirect()->to("/admin");
+		} else if ($this->session->get("tipe") == "user") {
+			return redirect()->to("/");
+		}
         $judul = $this->request->getVar("kategori");
         $data = [
-            "id_user" => $session->get("id_akun"),
+            "id_user" => $this->session->get("id_akun"),
             "slug_kategori" => url_title($judul),
             "nama_kategori" => $judul,
             "urutan" => "",
@@ -124,7 +150,11 @@ class Postingan extends BaseController
     }
     public function addJenisKategori()
     {
-        $session = session();
+		if ($this->session->get("tipe") == "") {
+			return redirect()->to("/admin");
+		} else if ($this->session->get("tipe") == "user") {
+			return redirect()->to("/");
+		}
         $id_kategori = $this->request->getVar("kategori");
         $jenis = $this->request->getVar("jenis");
         $data = [
@@ -139,6 +169,11 @@ class Postingan extends BaseController
     }
     public function addJenis()
     {
+		if ($this->session->get("tipe") == "") {
+			return redirect()->to("/admin");
+		} else if ($this->session->get("tipe") == "user") {
+			return redirect()->to("/");
+		}
         $model = new KategoriModel();
         $isiKategori = $model->cekKategori();
         $data = [
