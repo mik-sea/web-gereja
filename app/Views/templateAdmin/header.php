@@ -46,7 +46,22 @@
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
-                        <li class="active"><a class="nav-link" href="#"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+                        <li class="<?php if ($active == 'dashboardAdmin') {
+                                        echo 'active';
+                                    } ?>"><a class="nav-link" href="<?= base_url('dashboardAdmin') ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+
+                        <li class="<?php if ($active == 'pengumuman') {
+                                        echo 'active';
+                                    } ?>"><a class="nav-link" href="<?= base_url('pengumuman') ?>"><i class="fas fa-bullhorn"></i> <span>Pengumuman</span></a></li>
+                        <!-- <li class="nav-item dropdown ">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-bullhorn"></i><span>Pengumuman Web</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="#">Event</a></li>
+                                <li><a class="nav-link" href="#">Banner</a></li>
+                            </ul>
+                        </li> -->
+                        <li><a class="nav-link" href="#"><i class="fas fa-indent"></i> <span>Posting / Kegiatan</span></a></li>
+                        <li><a class="nav-link" href="#"><i class="fas fa-users"></i> <span>Keanggotaan</span></a></li>
                         <!-- <li class="nav-item dropdown active">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                             <ul class="dropdown-menu">
@@ -54,8 +69,17 @@
                                 <li class="active"><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
                             </ul>
                         </li> -->
-                        <!-- <li class="menu-header">Starter</li>
+                        <li class="menu-header">Manajemen Web</li>
                         <li class="nav-item dropdown">
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-tasks"></i><span>Konten Menu</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="#">Sejarah</a></li>
+                                <li><a class="nav-link" href="#">Visi Misi</a></li>
+                                <li><a class="nav-link" href="#">Struktur Majelis</a></li>
+                                <li><a class="nav-link" href="#">Tata Gereja</a></li>
+                            </ul>
+                        </li>
+                        <!--  <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Layout</span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>

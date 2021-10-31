@@ -10,6 +10,8 @@
     </div>
 </div>
 
+
+
 <?= $this->endSection(); ?>
 
 
@@ -21,4 +23,13 @@
 
 <?= $this->section('js'); ?>
 <!-- tempat menyimpan js/jquery/json -->
+<script>
+    $(document).ready(function() {
+        $('#table-1').DataTable({
+            "paging": true,
+            "ordering": true,
+            "info": true
+        });
+    });
+</script>
 <?= $this->endSection(); ?>
