@@ -2,33 +2,25 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme template">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme template">
-
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title><?= $title; ?></title>
-    <!-- favicon -->
+
+    <!-- Favicons -->
     <link href="/templateUser/assets/img/favicon.png" rel="icon">
+    <link href="/templateUser/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <link href="/templateAdmin/css/font-face.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <link href="/templateAdmin/req/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="/templateAdmin/node_modules/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="/templateAdmin/node_modules/summernote/dist/summernote-bs4.css">
+    <link rel="stylesheet" href="/templateAdmin/node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/templateAdmin/node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
 
-    <link href="/templateAdmin/req/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/wow/animate.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/slick/slick.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
-
-    <link href="/templateAdmin/css/theme.css" rel="stylesheet" media="all">
-    <meta name="robots" content="noindex, nofollow">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/templateAdmin/assets/css/style.css">
+    <link rel="stylesheet" href="/templateAdmin/assets/css/components.css">
 </head>

@@ -1,113 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Login Admin ONKP Resort Jawa</title>
+    <link href="/templateUser/assets/img/favicon.png" rel="icon">
+    <!-- General CSS Files -->
+    <!-- <link rel="shortcut icon" href="/templateAdmin/favicon.png" type="image/x-icon" /> -->
+    <link rel="stylesheet" href="/templateAdmin/assets/modules/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/templateAdmin/assets/modules/fontawesome/css/all.css">
 
-    <!-- Title Page-->
-    <title>Login</title>
+    <!-- CSS Libraries -->
+    <!-- <link rel="stylesheet" href="/templateAdmin/assets/modules/bootstrap-social/bootstrap-social.css"> -->
+    <link rel="stylesheet" href="/templateAdmin/pages/iziToast.min.css">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/templateAdmin/assets/css/style.css">
+    <link rel="stylesheet" href="/templateAdmin/assets/css/components.css">
+    <!-- Start GA -->
 
-    <!-- Fontfaces CSS-->
-    <link href="/templateAdmin/css/font-face.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <!-- Bootstrap CSS-->
-    <link href="/templateAdmin/req/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-
-    <!-- req CSS-->
-    <link href="/templateAdmin/req/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/wow/animate.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/slick/slick.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="/templateAdmin/css/theme.css" rel="stylesheet" media="all">
-
+    <!-- /END GA -->
 </head>
 
-<body class="animsition">
-    <div class="page-wrapper">
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                            <a href="#">
-                                <img src="/templateUser/assets/img/logo.png" alt="ONKP admin">
-                            </a>
+<body>
+    <div id="app">
+        <section class="section">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                        <div class="login-brand" style="margin-bottom: 15px">
+                            <img src="/templateUser/assets/img/logo.png" alt="logo" width="80" class="shadow-light rounded-circle">
                         </div>
-                        <div class="err">
-                        <?php
-                            if(session()->getFlashData('msgerr')){
-                                echo "<div class='alert alert-danger' role='alert'>".session()->getFlashData('msgerr')."</div>";
-                            }
-                        ?>
-                        </div>
-                        <div class="login-form">
-                            <form action="/loginAdmin" method="post">
-                                <div class="form-group">
-                                    <label>Username</label>
-                                    <input class="au-input au-input--full" type="text" name="username" placeholder="Username">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
-                                </div>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Remember Me
-                                    </label>
-                                    <label>
-                                        <a href="#">Forgotten Password?</a>
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                            </form>
-                            <div class="register-link">
-                                <p>
-                                    Don't you have account?
-                                    <a href="#">Sign Up Here</a>
-                                </p>
+
+                        <div class="card card-primary">
+                            <div class="card-header justify-content-center">
+                                <h4>Silahkan Login Admin</h4>
+                            </div>
+
+                            <div class="card-body">
+
+                                <form id="form-login" action="<?= base_url('loginAdmin') ?>" method="POST" class="needs-validation" novalidate="">
+
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
+                                        <div class="invalid-feedback">
+                                            Please fill in your username
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="d-block">
+                                            <label for="password" class="control-label">Password</label>
+                                            <div class="float-right">
+
+                                            </div>
+                                        </div>
+                                        <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                                        <div class="invalid-feedback">
+                                            please fill in your password
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
+                                            <label class="custom-control-label" for="remember-me">Tampilkan Password</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button name="login" type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4" id="submit">
+                                            Login
+                                        </button>
+                                    </div>
+                                </form>
+
+
                             </div>
                         </div>
+                        <!-- <div class="mt-5 text-muted text-center">
+              Don't have an account? <a href="auth-register.html">Create One</a>
+            </div> -->
+                        <div class="simple-footer">
+                            Copyright &copy; <?php $thn = date('Y');
+                                                echo $thn; ?> <a href="<?= base_url('/') ?>" style="text-decoration: none;"> ONKP Resort Jawa </a></div>
                     </div>
                 </div>
             </div>
-        </div>
-
+        </section>
     </div>
 
-    <!-- Jquery JS-->
-    <script src="/templateAdmin/req/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="/templateAdmin/req/bootstrap-4.1/popper.min.js"></script>
-    <script src="/templateAdmin/req/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- req JS       -->
-    <script src="/templateAdmin/req/slick/slick.min.js">
-    </script>
-    <script src="/templateAdmin/req/wow/wow.min.js"></script>
-    <script src="/templateAdmin/req/animsition/animsition.min.js"></script>
-    <script src="/templateAdmin/req/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="/templateAdmin/req/counter-up/jquery.waypoints.min.js"></script>
-    <script src="/templateAdmin/req/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="/templateAdmin/req/circle-progress/circle-progress.min.js"></script>
-    <script src="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="/templateAdmin/req/chartjs/Chart.bundle.min.js"></script>
-    <script src="/templateAdmin/req/select2/select2.min.js">
-    </script>
+    <!-- General JS Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="/templateAdmin/assets/js/stisla.js"></script>
+    <script src="/templateAdmin/assets/modules/moment.min.js"></script>
+    <script src="/templateAdmin/assets/js/stisla.js"></script>
 
-    <!-- Main JS-->
-    <script src="/templateAdmin/js/main.js"></script>
+    <!-- JS Libraies -->
 
+    <!-- Page Specific JS File -->
+    <script src="/templateAdmin/pages/iziToast.min.js"></script>
+    <!-- Template JS File -->
+    <script src="/templateAdmin/assets/js/scripts.js"></script>
+    <script src="/templateAdmin/assets/js/custom.js"></script>
+    <!-- <script>
+        $('#form-login').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '',
+                data: $(this).serialize(),
+                success: function(data) {
+                    if (data == "ok") {
+                        iziToast.success({
+                            title: 'Berhasil!',
+                            message: 'Anda akan dialihkan',
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        iziToast.error({
+                            title: 'Maaf, ',
+                            message: 'Username atau Password Salah',
+                            position: 'topRight'
+                        });
+                    }
+                }
+            });
+            return false;
+        });
+    </script> -->
+    <?php if (session()->getFlashdata('msgerr')) { ?>
+        <script>
+            iziToast.error({
+                title: 'Maaf, ',
+                message: 'Username atau Password Salah',
+                position: 'topRight'
+            });
+        </script>
+    <?php } ?>
+    <?php if (session()->getFlashdata('tidakAktif')) { ?>
+        <script>
+            iziToast.error({
+                title: 'Maaf, ',
+                message: 'Akun anda tidak aktif, hubungi admin !',
+                position: 'topRight'
+            });
+        </script>
+    <?php } ?>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#remember-me").change(function() {
+
+                // Check the checkbox state
+                if ($(this).is(':checked')) {
+                    // Changing type attribute
+                    $("#password").attr("type", "text");
+
+                    // Change the Text
+                    $("#toggleText").text("Hide");
+                } else {
+                    // Changing type attribute
+                    $("#password").attr("type", "password");
+
+                    // Change the Text
+                    $("#toggleText").text("Show");
+                }
+
+            });
+        });
+    </script>
 </body>
 
 </html>
-<!-- end document-->

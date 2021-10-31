@@ -1,33 +1,37 @@
+<footer class="main-footer">
+    <div class="footer-left">
+        Copyright &copy; <?php $date = date('Y');
+                            echo $date; ?> <a href="<?= base_url(); ?>">ONKP Resort Jawa</a>
+    </div>
+    <div class="footer-right">
+        1.0.0
+    </div>
+</footer>
+</div>
+</div>
 <?= $this->renderSection('modal'); ?>
+<!-- General JS Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="/templateAdmin/assets/js/stisla.js"></script>
 
-<script src="/templateAdmin/req/jquery-3.2.1.min.js"></script>
+<!-- JS Libraies -->
+<script src="/templateAdmin/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="/templateAdmin/node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="/templateAdmin/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/templateAdmin/node_modules/summernote/dist/summernote-bs4.js"></script>
+<script src="/templateAdmin/node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
 
-<script src="/templateAdmin/req/bootstrap-4.1/popper.min.js"></script>
-<script src="/templateAdmin/req/bootstrap-4.1/bootstrap.min.js"></script>
+<!-- Template JS File -->
+<script src="/templateAdmin/assets/js/scripts.js"></script>
+<script src="/templateAdmin/assets/js/custom.js"></script>
 
-<script src="/templateAdmin/req/slick/slick.min.js">
-</script>
-<script src="/templateAdmin/req/wow/wow.min.js"></script>
-<script src="/templateAdmin/req/animsition/animsition.min.js"></script>
-<script src="/templateAdmin/req/bootstrap-progressbar/bootstrap-progressbar.min.js">
-</script>
-<script src="/templateAdmin/req/counter-up/jquery.waypoints.min.js"></script>
-<script src="/templateAdmin/req/counter-up/jquery.counterup.min.js">
-</script>
-<script src="/templateAdmin/req/circle-progress/circle-progress.min.js"></script>
-<script src="/templateAdmin/req/perfect-scrollbar/perfect-scrollbar.js"></script>
-<script src="/templateAdmin/req/chartjs/Chart.bundle.min.js"></script>
-<script src="/templateAdmin/req/select2/select2.min.js">
-</script>
-<script src="/templateAdmin/req/vector-map/jquery.vmap.js"></script>
-<script src="/templateAdmin/req/vector-map/jquery.vmap.min.js"></script>
-<script src="/templateAdmin/req/vector-map/jquery.vmap.sampledata.js"></script>
-<script src="/templateAdmin/req/vector-map/jquery.vmap.world.js"></script>
+<!-- Page Specific JS File -->
+<script src="/templateAdmin/assets/js/page/index.js"></script>
 
-<script src="/templateAdmin/js/main.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6a542a5d84424b62","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.10.0","si":100}'></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6a542a5d68634b62","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.10.0","si":100}'></script>
-<script src="/templateAdmin/tinymce/js/tinymce/tinymce.min.js"></script>
 <?= $this->renderSection('js'); ?>
 </body>
 

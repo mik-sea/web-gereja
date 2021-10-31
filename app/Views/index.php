@@ -1,6 +1,25 @@
 <?= $this->extend('templateUser/tema'); ?>
 <?= $this->section('konten'); ?>
 <?= $this->include('templateUser/hero'); ?>
+
+<!-- pengumuman / event -->
+<section id="featured" class="featured">
+    <div class="container">
+        <div class="section-title">
+            <h2>EVENT</h2>
+            <p>Berisikan pengumuman atau event yang akan datang maupun yang sedang berlangsung</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+
+                <img src="/templateUser/assets/img/image sample.png" alt="" height="250px" width="100%" style="border-radius:5px" class="img-fluid">
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+</section><!-- End About Section -->
 <!-- ======= Featured Section ======= -->
 <section id="team" class="team">
     <div class="container">
