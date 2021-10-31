@@ -40,7 +40,7 @@
                             <div class="card-body">
 
                                 <form id="form-login" action="<?= base_url('loginAdmin') ?>" method="POST" class="needs-validation" novalidate="">
-
+                                    <?= csrf_field(); ?>
                                     <div class="form-group">
                                         <label for="username">Username</label>
                                         <input id="username" type="text" class="form-control" name="username" tabindex="1" required autofocus>
