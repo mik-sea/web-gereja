@@ -15,11 +15,6 @@ class Postingan extends BaseController
 	}
     public function viewTambahPostingan()
     {
-		if ($this->session->get("tipe") == "") {
-			return redirect()->to("/admin");
-		} else if ($this->session->get("tipe") == "user") {
-			return redirect()->to("/");
-		}
         $model = new KategoriModel();
         $isiKategori = $model->cekKategori();
         $data = [
@@ -37,11 +32,6 @@ class Postingan extends BaseController
     }
     public function saveImage()
     {
-		if ($this->session->get("tipe") == "") {
-			return redirect()->to("/admin");
-		} else if ($this->session->get("tipe") == "user") {
-			return redirect()->to("/");
-		}
         $validated = $this->validate([
             'file' => [
                 'uploaded[file]',
@@ -66,11 +56,6 @@ class Postingan extends BaseController
     }
     public function tambahPostingan()
     {
-		if ($this->session->get("tipe") == "") {
-			return redirect()->to("/admin");
-		} else if ($this->session->get("tipe") == "user") {
-			return redirect()->to("/");
-		}
         $judul = $this->request->getVar("judul");
         $thumbnail = $this->request->getFile("file");
         $kategori = $this->request->getVar("kategori");
@@ -120,21 +105,11 @@ class Postingan extends BaseController
     }
     public function addKategori()
     {
-		if ($this->session->get("tipe") == "") {
-			return redirect()->to("/admin");
-		} else if ($this->session->get("tipe") == "user") {
-			return redirect()->to("/");
-		}
         return View("addKategori");
     }
     // insert ke table kategori
     public function toKategori()
     {
-		if ($this->session->get("tipe") == "") {
-			return redirect()->to("/admin");
-		} else if ($this->session->get("tipe") == "user") {
-			return redirect()->to("/");
-		}
         $judul = $this->request->getVar("kategori");
         $data = [
             "id_user" => $this->session->get("id_akun"),
@@ -150,11 +125,6 @@ class Postingan extends BaseController
     }
     public function addJenisKategori()
     {
-		if ($this->session->get("tipe") == "") {
-			return redirect()->to("/admin");
-		} else if ($this->session->get("tipe") == "user") {
-			return redirect()->to("/");
-		}
         $id_kategori = $this->request->getVar("kategori");
         $jenis = $this->request->getVar("jenis");
         $data = [
@@ -169,11 +139,6 @@ class Postingan extends BaseController
     }
     public function addJenis()
     {
-		if ($this->session->get("tipe") == "") {
-			return redirect()->to("/admin");
-		} else if ($this->session->get("tipe") == "user") {
-			return redirect()->to("/");
-		}
         $model = new KategoriModel();
         $isiKategori = $model->cekKategori();
         $data = [

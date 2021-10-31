@@ -38,7 +38,53 @@
 <script src="/templateAdmin/tes/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
 <script src="/templateAdmin/tes/bootstrap-daterangepicker/daterangepicker.js"></script>
 
-<script type='text/javascript'>
+<script>
+    function example_image_upload_handler(blobInfo, success, failure, progress) {
+        var xhr, formData;
+
+        xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.open('POST', '/sendImage');
+
+        xhr.upload.onprogress = function(e) {
+            progress(e.loaded / e.total * 100);
+        };
+
+        xhr.onload = function() {
+            var json;
+
+            if (xhr.status === 403) {
+                failure('HTTP Error: ' + xhr.status, {
+                    remove: true
+                });
+                return;
+            }
+
+            if (xhr.status < 200 || xhr.status >= 300) {
+                failure('HTTP Error: ' + xhr.status);
+                return;
+            }
+
+            json = JSON.parse(xhr.responseText);
+
+            if (!json || typeof json.location != 'string') {
+                failure('Invalid JSON: ' + xhr.responseText);
+                return;
+            }
+
+            success(json.location);
+            // console.log(json);
+        };
+
+        xhr.onerror = function() {
+            failure('Image upload failed due to a XHR Transport error. Code: ' + xhr.status);
+        };
+
+        formData = new FormData();
+        formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+        xhr.send(formData);
+    };
     tinymce.init({
         selector: '.konten',
         menubar: true,
@@ -48,6 +94,9 @@
             'insertdatetime media table paste code help wordcount'
         ],
         toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor | link image | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat code',
+        /* we override default upload handler to simulate successful upload*/
+        images_upload_handler: example_image_upload_handler,
+        images_file_types: 'jpg,jpeg,png,svg,webp',
         content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
     });
 </script>
