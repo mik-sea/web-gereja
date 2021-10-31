@@ -19,11 +19,11 @@
 <script src="/templateAdmin/assets/js/stisla.js"></script>
 
 <!-- JS Libraies -->
-<script src="/templateAdmin/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
-<script src="/templateAdmin/node_modules/chart.js/dist/Chart.min.js"></script>
-<script src="/templateAdmin/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-<script src="/templateAdmin/node_modules/summernote/dist/summernote-bs4.js"></script>
-<script src="/templateAdmin/node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+<script src="/templateAdmin/tes/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="/templateAdmin/tes/chart.js/dist/Chart.min.js"></script>
+<script src="/templateAdmin/tes/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/templateAdmin/tes/summernote/dist/summernote-bs4.js"></script>
+<script src="/templateAdmin/tes/chocolat/dist/js/jquery.chocolat.min.js"></script>
 
 <!-- JS DATATABLE -->
 
@@ -34,9 +34,9 @@
 <script src="/templateAdmin/assets/js/custom.js"></script>
 <script src="/templateAdmin/pages/iziToast.min.js"></script>
 <script src="/templateAdmin/assets/modules/sweetalert.min.js"></script>
-<script src="/templateAdmin/node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-<script src="/templateAdmin/node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
-<script src="/templateAdmin/node_modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="/templateAdmin/tes/chocolat/dist/js/jquery.chocolat.min.js"></script>
+<script src="/templateAdmin/tes/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script src="/templateAdmin/tes/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 <script type='text/javascript'>
     tinymce.init({

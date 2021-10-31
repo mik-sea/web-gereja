@@ -18,17 +18,17 @@
     <link rel="stylesheet" href="/templateAdmin/assets/modules/datatables.min.css">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="/templateAdmin/node_modules/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="/templateAdmin/node_modules/summernote/dist/summernote-bs4.css">
-    <link rel="stylesheet" href="/templateAdmin/node_modules/owl.carousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/templateAdmin/node_modules/owl.carousel/dist/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/summernote/dist/summernote-bs4.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/owl.carousel/dist/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="/templateAdmin/pages/iziToast.min.css">
     <!-- Template CSS -->
     <link rel="stylesheet" href="/templateAdmin/assets/css/style.css">
     <link rel="stylesheet" href="/templateAdmin/assets/css/components.css">
-    <link rel="stylesheet" href="/templateAdmin/node_modules/chart.js/dist/Chart.min.css">
-    <link rel="stylesheet" href="/templateAdmin/node_modules/chocolat/dist/css/chocolat.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/chart.js/dist/Chart.min.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/chocolat/dist/css/chocolat.css">
     <script src="/templateAdmin/tinymce/js/tinymce/tinymce.min.js"></script>
-    <link rel="stylesheet" href="/templateAdmin/node_modules/bootstrap-daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" href="/templateAdmin/node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="/templateAdmin/tes/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
 </head>
