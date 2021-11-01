@@ -39,6 +39,20 @@
 <script src="/templateAdmin/tes/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 <?= $this->renderSection('js'); ?>
+<script type="text/javascript">
+    tinymce.init({
+        selector: '.konten',
+        menubar: true,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor | link image | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat code',
+        /* we override default upload handler to simulate successful upload*/
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    });
+</script>
 </body>
 
 </html>
