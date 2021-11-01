@@ -32,27 +32,33 @@ class Postingan extends BaseController
     }
     public function saveImage()
     {
-        $validated = $this->validate([
-            'file' => [
-                'uploaded[file]',
-                'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
-            ],
-        ]);
-        $msg = 'Please select a valid file';
-        if ($validated) {
-            $avatar = $this->request->getFile('file');
-            $avatar->move('../public/uploads');
-            $data = [
-                'name' =>  $avatar->getClientName(),
-                'type'  => $avatar->getClientMimeType()
-            ];
-            // $save = $builder->insert($data);
-            // $msg = 'File has been uploaded';
-            $lokasi = [
-                "location" => '/uploads/' . $data["name"]
-            ];
-            return json_encode($lokasi);
-        }
+        // $validated = $this->validate([
+        //     'file' => [
+        //         'uploaded[file]',
+        //         'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
+        //     ],
+        // ]);
+        // $msg = 'Please select a valid file';
+        // if ($validated) {
+        //     $avatar = $this->request->getFile('file');
+        //     $avatar->move('../public/uploads');
+        //     $data = [
+        //         'name' =>  $avatar->getClientName(),
+        //         'type'  => $avatar->getClientMimeType()
+        //     ];
+        //     // $save = $builder->insert($data);
+        //     // $msg = 'File has been uploaded';
+        //     $lokasi = [
+        //         "location" => '/uploads/' . $data["name"]
+        //     ];
+        //     return json_encode($lokasi);
+        // }else{
+        //     $lokasi = [
+        //         "location" => "error"
+        //     ];
+        //     return json_encode($lokasi);
+        // }
+        return "hai";
     }
     public function tambahPostingan()
     {

@@ -42,7 +42,7 @@ $routes->get('/sejarah', 'Tentang::sejarah');
 $routes->get('/struktur-majelis', 'Tentang::strukturMajelis');
 $routes->get('/tambahPostingan','Postingan::viewTambahPostingan');
 $routes->post('/addPostingan','Postingan::tambahPostingan');
-$routes->post('/jenis/(:any)','Postingan::showJenis/$1');
+$routes->get('/jenis/(:any)','Postingan::showJenis/$1');
 $routes->post('/sendImage','Postingan::saveImage');
 $routes->get('/addKategori','Postingan::addKategori');
 $routes->post('/addKategoris','Postingan::toKategori');
