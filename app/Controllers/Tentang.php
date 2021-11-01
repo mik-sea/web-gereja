@@ -57,4 +57,30 @@ class Tentang extends BaseController
         ];
         return view('tentang/sudutPandang', $data);
     }
+
+    public function gallery()
+    {
+        $data = [
+            'title' => 'Gallery',
+            'active' => 'gallery'
+        ];
+        return view('tentang/gallery', $data);
+    }
+
+    public function keanggotaan()
+    {
+        $data = [
+            'title' => 'Keanggotaan',
+            'active' => 'keanggotaan'
+        ];
+        return view('tentang/keanggotaan', $data);
+    }
+    public function tataGereja()
+    {
+        $data = [
+            'title' => 'Tata Gereja',
+            'active' => 'tataGereja'
+        ];
+        return view('tentang/tataGereja', $data);
+    }
 }

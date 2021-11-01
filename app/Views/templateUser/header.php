@@ -69,7 +69,7 @@
                     <li><a class="<?php if ($active == 'home') {
                                         echo 'active';
                                     } ?>" href="<?= base_url('/') ?>">Home</a></li>
-                    <li class="dropdown"><a class="<?php if ($active == 'visi' || $active == 'sejarah' || $active == 'struktur') {
+                    <li class="dropdown"><a class="<?php if ($active == 'visi' || $active == 'sejarah' || $active == 'struktur' || $active == 'keanggotaan' || $active == 'tataGereja') {
                                                         echo 'active';
                                                     } ?>" href="#"><span>Tentang</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
@@ -82,8 +82,12 @@
                             <li><a <?php if ($active == 'struktur') {
                                         echo "style='color:#e96b56'";
                                     } ?> href="<?= base_url('/struktur-majelis') ?>">Struktur Majelis</a></li>
-                            <li><a href="#">Keanggotaan</a></li>
-                            <li><a href="#">Tata Gereja</a></li>
+                            <li><a <?php if ($active == 'keanggotaan') {
+                                        echo "style='color:#e96b56'";
+                                    } ?> href="<?= base_url('/keanggotaan') ?>">Keanggotaan</a></li>
+                            <li><a <?php if ($active == 'tataGereja') {
+                                        echo "style='color:#e96b56'";
+                                    } ?> href="<?= base_url('/tata-gereja') ?>">Tata Gereja</a></li>
                             <li><a href="#">Perikopen ONKP</a></li>
                             <li><a href="#">Agende/Liturgi ONKP</a></li>
                             <li><a href="#">Buku Zinuno / Kidung Jemaat</a></li>
@@ -105,9 +109,13 @@
 
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Kegiatan</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a class="<?php if ($active == 'gallery') {
+                                                        echo 'active';
+                                                    } ?>" href="#"><span>Kegiatan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Gallery</a></li>
+                            <li><a <?php if ($active == 'gallery') {
+                                        echo "style='color:#e96b56'";
+                                    } ?> href="<?= base_url('gallery') ?>">Gallery</a></li>
                             <li><a href="#">Rapat</a></li>
                             <li><a href="#">Ibadah Raya Jemaat</a></li>
                             <li><a href="#">Kegiatan Komisi</a></li>

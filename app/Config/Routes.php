@@ -41,16 +41,19 @@ $routes->get('/visi-misi', 'Tentang::visiMisi');
 $routes->get('/sejarah', 'Tentang::sejarah');
 $routes->get('/buku-renungan', 'Tentang::bukuRenungan');
 $routes->get('/sudut-pandang', 'Tentang::sudutPandang');
+$routes->get('/gallery', 'Tentang::gallery');
+$routes->get('/keanggotaan', 'Tentang::keanggotaan');
+$routes->get('/tata-gereja', 'Tentang::tataGereja');
 $routes->get('/struktur-majelis', 'Tentang::strukturMajelis');
-$routes->get('/tambahPostingan','Postingan::viewTambahPostingan');
-$routes->post('/addPostingans','Postingan::tambahPostingans');
-$routes->get('/jenis/(:any)','Postingan::showJenis/$1');
-$routes->post('/sendImages','Postingan::saveImage');
-$routes->get('/addKategori','Postingan::addKategori');
-$routes->post('/addKategoris','Postingan::toKategori');
-$routes->get('/addJenis','Postingan::addJenis');
-$routes->post('/addJeniss','Postingan::addJenisKategori');
-$routes->get('/viewArtikel','Postingan::viewArtikel');
+$routes->get('/tambahPostingan', 'Postingan::viewTambahPostingan');
+$routes->post('/addPostingans', 'Postingan::tambahPostingans');
+$routes->get('/jenis/(:any)', 'Postingan::showJenis/$1');
+$routes->post('/sendImages', 'Postingan::saveImage');
+$routes->get('/addKategori', 'Postingan::addKategori');
+$routes->post('/addKategoris', 'Postingan::toKategori');
+$routes->get('/addJenis', 'Postingan::addJenis');
+$routes->post('/addJeniss', 'Postingan::addJenisKategori');
+$routes->get('/viewArtikel', 'Postingan::viewArtikel');
 
 $routes->get('/logout', 'Home::logout');
 /**
