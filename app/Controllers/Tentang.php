@@ -39,4 +39,22 @@ class Tentang extends BaseController
         ];
         return view('tentang/strukturMajelis', $data);
     }
+
+    public function bukuRenungan()
+    {
+        $data = [
+            'title' => 'Buku Renungan',
+            'active' => 'bukuRenungan'
+        ];
+        return view('tentang/bukuRenungan', $data);
+    }
+
+    public function sudutPandang()
+    {
+        $data = [
+            'title' => 'Sudut Pandang',
+            'active' => 'sudutPandang'
+        ];
+        return view('tentang/sudutPandang', $data);
+    }
 }

@@ -92,6 +92,7 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- tes JS Files -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="/templateUser/assets/tes/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="/templateUser/assets/tes/glightbox/js/glightbox.min.js"></script>
 <script src="/templateUser/assets/tes/isotope-layout/isotope.pkgd.min.js"></script>
@@ -100,6 +101,8 @@
 <script src="/templateUser/assets/tes/swiper/swiper-bundle.min.js"></script>
 <script src="/templateUser/assets/tes/waypoints/noframework.waypoints.js"></script>
 
+<!-- JS DATATABLE -->
+<script src="/templateAdmin/assets/modules/datatables.min.js"></script>
 <!-- Template Main JS File -->
 <script src="/templateUser/assets/js/main.js"></script>
 
@@ -134,6 +137,7 @@
     });
 </script>
 
+<?= $this->renderSection('js'); ?>
 
 </body>
 

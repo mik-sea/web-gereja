@@ -39,15 +39,17 @@ $routes->get('/anggotaAllRegion', 'Home::anggotaAllRegion');
 $routes->get('/kontak', 'Tentang::index');
 $routes->get('/visi-misi', 'Tentang::visiMisi');
 $routes->get('/sejarah', 'Tentang::sejarah');
+$routes->get('/buku-renungan', 'Tentang::bukuRenungan');
+$routes->get('/sudut-pandang', 'Tentang::sudutPandang');
 $routes->get('/struktur-majelis', 'Tentang::strukturMajelis');
-$routes->get('/tambahPostingan','Postingan::viewTambahPostingan');
-$routes->post('/addPostingan','Postingan::tambahPostingan');
-$routes->get('/jenis/(:any)','Postingan::showJenis/$1');
-$routes->post('/sendImage','Postingan::saveImage');
-$routes->get('/addKategori','Postingan::addKategori');
-$routes->post('/addKategoris','Postingan::toKategori');
-$routes->get('/addJenis','Postingan::addJenis');
-$routes->post('/addJeniss','Postingan::addJenisKategori');
+$routes->get('/tambahPostingan', 'Postingan::viewTambahPostingan');
+$routes->post('/addPostingan', 'Postingan::tambahPostingan');
+$routes->get('/jenis/(:any)', 'Postingan::showJenis/$1');
+$routes->post('/sendImage', 'Postingan::saveImage');
+$routes->get('/addKategori', 'Postingan::addKategori');
+$routes->post('/addKategoris', 'Postingan::toKategori');
+$routes->get('/addJenis', 'Postingan::addJenis');
+$routes->post('/addJeniss', 'Postingan::addJenisKategori');
 
 $routes->get('/logout', 'Home::logout');
 /**

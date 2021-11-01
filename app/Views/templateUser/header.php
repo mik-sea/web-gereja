@@ -23,7 +23,8 @@
     <link href="/templateUser/assets/tes/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="/templateUser/assets/tes/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="/templateUser/assets/tes/swiper/swiper-bundle.min.css" rel="stylesheet">
-
+    <!-- CSS DATATABLE -->
+    <link rel="stylesheet" href="/templateAdmin/assets/modules/datatables.min.css">
     <!-- Template Main CSS File -->
     <link href="/templateUser/assets/css/style.css" rel="stylesheet">
 
@@ -106,6 +107,7 @@
                     </li>
                     <li class="dropdown"><a href="#"><span>Kegiatan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
+                            <li><a href="#">Gallery</a></li>
                             <li><a href="#">Rapat</a></li>
                             <li><a href="#">Ibadah Raya Jemaat</a></li>
                             <li><a href="#">Kegiatan Komisi</a></li>
@@ -118,10 +120,16 @@
 
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Renungan</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a class="<?php if ($active == 'bukuRenungan' || $active == 'sudutPandang') {
+                                                        echo 'active';
+                                                    } ?>" href="#"><span>Renungan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Buku Renungan</a></li>
-                            <li><a href="#">Sudut Pandang</a></li>
+                            <li><a <?php if ($active == 'bukuRenungan') {
+                                        echo "style='color:#e96b56'";
+                                    } ?> href="<?= base_url('/buku-renungan') ?>">Buku Renungan</a></li>
+                            <li><a <?php if ($active == 'sudutPandang') {
+                                        echo "style='color:#e96b56'";
+                                    } ?> href="<?= base_url('/sudut-pandang') ?>">Sudut Pandang</a></li>
 
 
                         </ul>
