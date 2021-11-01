@@ -30,37 +30,36 @@ class Postingan extends BaseController
         $isiJenis = $jenismodel->cekjenis($id_kategori);
         return json_encode($isiJenis);
     }
-    public function saveImage()
-    {
-        // $validated = $this->validate([
-        //     'file' => [
-        //         'uploaded[file]',
-        //         'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
-        //     ],
-        // ]);
-        // $msg = 'Please select a valid file';
-        // if ($validated) {
-        //     $avatar = $this->request->getFile('file');
-        //     $avatar->move('../public/uploads');
-        //     $data = [
-        //         'name' =>  $avatar->getClientName(),
-        //         'type'  => $avatar->getClientMimeType()
-        //     ];
-        //     // $save = $builder->insert($data);
-        //     // $msg = 'File has been uploaded';
-        //     $lokasi = [
-        //         "location" => '/uploads/' . $data["name"]
-        //     ];
-        //     return json_encode($lokasi);
-        // }else{
-        //     $lokasi = [
-        //         "location" => "error"
-        //     ];
-        //     return json_encode($lokasi);
-        // }
-        return "hai";
-    }
-    public function tambahPostingan()
+    // public function saveImage()
+    // {
+    //     $validated = $this->validate([
+    //         'file' => [
+    //             'uploaded[file]',
+    //             'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
+    //         ],
+    //     ]);
+    //     $msg = 'Please select a valid file';
+    //     if ($validated) {
+    //         $avatar = $this->request->getFile('file');
+    //         $avatar->move('../public/uploads');
+    //         $data = [
+    //             'name' =>  $avatar->getClientName(),
+    //             'type'  => $avatar->getClientMimeType()
+    //         ];
+    //         // $save = $builder->insert($data);
+    //         // $msg = 'File has been uploaded';
+    //         $lokasi = [
+    //             "location" => '/uploads/' . $data["name"]
+    //         ];
+    //         return json_encode($lokasi);
+    //     }else{
+    //         $lokasi = [
+    //             "location" => "error"
+    //         ];
+    //         return json_encode($lokasi);
+    //     }
+    // }
+    public function tambahPostingans()
     {
         $judul = $this->request->getVar("judul");
         $thumbnail = $this->request->getFile("file");
@@ -100,13 +99,16 @@ class Postingan extends BaseController
             if ($error) {
                 $this->session->setFlashdata('errsql', 'error sql');
                 return redirect()->back();
+                // print_r($error);
             } else {
                 $thumbnail->move('../public/uploads');
                 return redirect()->back();
+                // echo "ke else";
             }
         } else {
             $this->session->setFlashdata('msgerr', 'Format gambar salah!');
             return redirect()->back()->withInput();
+            // echo "hai";
         }
     }
     public function addKategori()
@@ -151,5 +153,11 @@ class Postingan extends BaseController
             "kategori" => $isiKategori
         ];
         return View("addJenis.php", $data);
+    }
+    public function viewArtikel(){
+        $postinganModel = new PostinganModels();
+        $data["postingan"] = $postinganModel->paginate(5,"postingan");
+        $data["pager"] = $postinganModel->pager;
+        return View("postingan/viewPostingan",$data);
     }
 }

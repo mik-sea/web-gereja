@@ -13,7 +13,8 @@
                             <h4>Tambah Postingan</h4>
                         </div>
                         <div class="card-body card-block">
-                            <form action="/addPostingan" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="<?= base_url("/addPostingans")?>" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                            <?= csrf_field(); ?>
                                 <div class="row form-group">
                                     <div class="col col-md-3">
                                         <label for="hf-judul" class=" form-control-label">Judul</label>
@@ -78,13 +79,11 @@
                                         <span class="help-block">Isi berita</span>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary btn-sm">
-                                        <i class="fa fa-dot-circle-o"></i> Submit
-                                    </button>
-                                    <button type="reset" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-ban"></i> Reset
-                                    </button>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <button class="btn btn-primary" type="submit">Simpan</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
