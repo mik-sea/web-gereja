@@ -15,4 +15,15 @@ class PostinganModels extends Model{
         $query = $this->db->table("postingan")->countAll();
         return $query;
     }
+    public function getAllPostingan(){
+        $this->builder()
+             ->select(["{$this->table}.*", 'akun.username'])
+             ->join('akun', "{$this->table}.id_user = akun.id_akun")
+             ->where("status='publish'");
+        // $this->db->query("select p.* a.username from postingan p inner join akun a on p.id_user=a.id_akun")->getResult();
+        return [
+            "data"=> $this->paginate(5,"postingan"),
+            "pager"=> $this->pager,
+        ];
+    }
 }

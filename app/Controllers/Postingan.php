@@ -156,8 +156,11 @@ class Postingan extends BaseController
     }
     public function viewArtikel(){
         $postinganModel = new PostinganModels();
-        $data["postingan"] = $postinganModel->paginate(5,"postingan");
-        $data["pager"] = $postinganModel->pager;
+        $kategoriModel = new KategoriModel();
+        $data["postingan"] = $postinganModel->getAllPostingan()["data"];
+        $data["pager"] = $postinganModel->getAllPostingan()["pager"];
+        $data["kategori"] = $kategoriModel->cekKategori();
+
         return View("postingan/viewPostingan",$data);
     }
 }
