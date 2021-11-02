@@ -27,7 +27,7 @@ class PostinganModels extends Model{
         ];
     }
     public function getAllPostinganById($id_berita){
-        return $this->select(["{$this->table}.*", 'akun.username'])
+        return $this->select(["{$this->table}.*", 'akun.username','akun.foto_profil'])
         ->join('akun', "{$this->table}.id_user = akun.id_akun")
         ->where("id_berita = '$id_berita' and status = 'publish'")->find();
     }
