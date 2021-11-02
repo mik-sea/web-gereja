@@ -22,7 +22,7 @@ class Postingan extends BaseController
             'title' => 'Tambah Posting',
             'active' => 'tambahPosting'
         ];
-        return view("postingan/viewTambahPostingan", $data);
+        return view("superAdmin/postingan", $data);
     }
     public function showJenis($id_kategori)
     {
