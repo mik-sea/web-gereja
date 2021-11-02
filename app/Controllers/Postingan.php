@@ -163,4 +163,8 @@ class Postingan extends BaseController
 
         return View("postingan/viewPostingan",$data);
     }
+    public function viewArtikels($id_berita){
+        $postinganModel = new PostinganModels();
+        print_r($postinganModel->getAllPostinganById($id_berita));
+    }
 }

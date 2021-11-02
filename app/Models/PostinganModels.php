@@ -26,4 +26,9 @@ class PostinganModels extends Model{
             "pager"=> $this->pager,
         ];
     }
+    public function getAllPostinganById($id_berita){
+        return $this->select(["{$this->table}.*", 'akun.username'])
+        ->join('akun', "{$this->table}.id_user = akun.id_akun")
+        ->where("id_berita = '$id_berita' and status = 'publish'")->find();
+    }
 }

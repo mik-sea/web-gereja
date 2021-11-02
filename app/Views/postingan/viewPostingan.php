@@ -7,6 +7,7 @@
 				<div class="row">
 					<div class="col-lg-8 entries">
                         <?php
+                        if($postingan !== []){
                             foreach($postingan as $artikel){
                         ?>
 						<article class="entry">
@@ -14,12 +15,12 @@
                             <img src="<?= $artikel['gambar'];?>" alt="image artikel" width="500px" height="500px">
 							</div>
 							<h2 class="entry-title">
-								<a href="blog-single.html"><?php echo $artikel["judul_berita"];?></a>
+								<a href="#"><?php echo $artikel["judul_berita"];?></a>
 							</h2>
 							<div class="entry-meta">
 								<ul>
-									<li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html"><?= $artikel["id_user"]?></a></li>
-									<li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="<?= $artikel['tanggal_publish']?>"><?= $artikel["tanggal_publish"]?></time></a></li>
+									<li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#"><?= $artikel["id_user"]?></a></li>
+									<li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime="<?= $artikel['tanggal_publish']?>"><?= $artikel["tanggal_publish"]?></time></a></li>
 									<!-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li> -->
 								</ul>
 							</div>
@@ -30,6 +31,10 @@
 								</div>
 							</div>
 						</article><!-- End blog entry -->
+                        <?php }}else{?>
+                            <h2 class="entry-title">
+								Data Belum Ada!!!
+							</h2>
                         <?php }?>
 						<div class="blog-pagination justify-content-center">
                             <?php echo $pager->links("postingan","bootstrap_pagination");?>
