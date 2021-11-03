@@ -16,14 +16,14 @@ class Postingan extends BaseController
     public function viewPostingan()
     {
         $model = new postinganModels();
-        $postingan = $model->findAll();
-        // $data = [
-        //     "postingan" => $postingan,
-        //     "kategori" => $kategori,
-        //     'title' => 'Postingan',
-        //     'active' => 'postingan'
-        // ];
-        // return view("superAdmin/postingan", $data);
+        $postingan = $model->getAllWithKategori();
+        // print_r($postingan);
+        $data = [
+            "postingan" => $postingan,
+            'title' => 'Postingan',
+            'active' => 'postingan'
+        ];
+        return view("superAdmin/postingan", $data);
     }
     public function viewTambahPostingan()
     {

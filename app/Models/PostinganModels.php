@@ -35,4 +35,8 @@ class PostinganModels extends Model{
         ->join('akun', "{$this->table}.id_user = akun.id_akun")
         ->where("id_berita = '$id_berita' and status = 'publish'")->find();
     }
+    public function getAllWithKategori(){
+        return $this->select(["{$this->table}.*", 'kategori.nama_kategori'])
+        ->join('kategori', "{$this->table}.id_kategori = kategori.id_kategori")->find();
+    }
 }

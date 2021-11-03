@@ -46,7 +46,7 @@
                                     <td><?= $post["judul_berita"]?></td>
                                     <td><?= $post["isi"]?></td>
                                     <td><?= base_url("viewArtikel/".$post["id_berita"])?></td>
-                                    <td><?= join(", ",$kategori)?></td>
+                                    <td><?= $post["nama_kategori"]?></td>
                                     <td><?= $post["gambar"]?></td>
                                     <td><?= $post["id_user"]?></td>
                                     <td><?= $post["status"]?></td>
