@@ -15,6 +15,10 @@ class PostinganModels extends Model{
         $query = $this->db->table("postingan")->countAll();
         return $query;
     }
+    public function getPostingan(){
+        $query = $this->db->table("postingan")->findAll();
+        return $query;
+    }
     public function getAllPostingan(){
         $this->builder()
              ->select(["{$this->table}.*", 'akun.username'])

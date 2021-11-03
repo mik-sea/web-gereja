@@ -60,7 +60,9 @@
                                 <li><a class="nav-link" href="#">Banner</a></li>
                             </ul>
                         </li> -->
-                        <li><a class="nav-link" href="/tambahPostingan"><i class="fas fa-indent"></i> <span>Posting / Kegiatan</span></a></li>
+                        <li class="<?php if ($active == 'postingan') {
+                                        echo 'active';
+                                    } ?>"><a class="nav-link" href="/postingan"><i class="fas fa-indent"></i> <span>Posting / Kegiatan</span></a></li>
                         <li><a class="nav-link" href="#"><i class="fas fa-users"></i> <span>Keanggotaan</span></a></li>
                         <!-- <li class="nav-item dropdown active">
                             <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>

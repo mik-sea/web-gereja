@@ -13,6 +13,18 @@ class Postingan extends BaseController
     public function __construct(){
 		$this->session = session();
 	}
+    public function viewPostingan()
+    {
+        $model = new postinganModels();
+        $postingan = $model->findAll();
+        // $data = [
+        //     "postingan" => $postingan,
+        //     "kategori" => $kategori,
+        //     'title' => 'Postingan',
+        //     'active' => 'postingan'
+        // ];
+        // return view("superAdmin/postingan", $data);
+    }
     public function viewTambahPostingan()
     {
         $model = new KategoriModel();
@@ -22,7 +34,7 @@ class Postingan extends BaseController
             'title' => 'Tambah Posting',
             'active' => 'tambahPosting'
         ];
-        return view("superAdmin/postingan", $data);
+        return view("postingan/viewTambahPostingan", $data);
     }
     public function showJenis($id_kategori)
     {

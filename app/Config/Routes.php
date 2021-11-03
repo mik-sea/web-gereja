@@ -46,6 +46,7 @@ $routes->get('/keanggotaan', 'Tentang::keanggotaan');
 $routes->get('/tata-gereja', 'Tentang::tataGereja');
 $routes->get('/struktur-majelis', 'Tentang::strukturMajelis');
 $routes->get('/tambahPostingan', 'Postingan::viewTambahPostingan');
+$routes->get('/postingan', 'Postingan::viewPostingan');
 $routes->post('/addPostingans', 'Postingan::tambahPostingans');
 $routes->get('/jenis/(:any)', 'Postingan::showJenis/$1');
 $routes->post('/sendImages', 'Postingan::saveImage');

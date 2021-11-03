@@ -15,7 +15,8 @@ class KategoriModel extends Model{
         return $this->db->table("kategori")->insert($data);
     }
     public function cekKategoriById($id_kategori){
+        echo $id_kategori;
         return $this->select(["{$this->table}.*"])
-        ->where("id_kategori = '$id_kategori'")->find();
+        ->where("id_kategori = '$id_kategori'")->findAll();
     }
 }
