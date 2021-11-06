@@ -9,14 +9,11 @@
         <!-- <div class="breadcrumb-item">Advanced Forms</div>  -->
     </div>
 </div>
-
-
-
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="section-header">
-                <h1 style="font-size: 16px;">Daftar Postingan Artikel</h1>
+                <h1 style="font-size: 16px;">Daftar Tunggu Artikel</h1>
                 <div class="section-header-breadcrumb">
                     <a href="<?= base_url('pengumuman/tambahPengumuman') ?>" class="breadcrumb-item btn btn-primary" data-toggle="tooltip" data-placement="top" data-title="Buat Pengumuman Baru"><i class="fas fa-plus"></i> Tambah Data</a>
                 </div>
@@ -40,7 +37,7 @@
                         </thead>
                         <tbody>
                             <?php $i=1;
-                            foreach($postingan as $post): ?>
+                            foreach($postingan as $post): if($post["status"] == "pending"){ ?>
                                 <tr>
                                     <td><?= $i++?></td>
                                     <td><?= $post["judul_berita"]?></td>
@@ -50,9 +47,59 @@
                                     <td><?= $post["gambar"]?></td>
                                     <td><?= $post["id_user"]?></td>
                                     <td><?= $post["status"]?></td>
-                                    <td>anu</td>
+                                    <td class="align-middle"><a href="<?= base_url('/update/status') . '/' . $post['id_berita']; ?>" class="btn btn-success btn-sm"><i class="fas fa-check" data-toggle="tooltip" data-placement="top" title="Checked"></i></a><a href="<?= base_url('viewArtikel') . '/' . $post['id_berita']; ?>" class="btn btn-secondary btn-sm"><i class="fas fa-external-link-alt" data-toggle="tooltip" data-placement="top" title="View"></i></a> <a href="#" data-href="<?= base_url('pengumuman/delete') . '/' . base64_encode($row['id']); ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#konfirmasi_hapus"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Hapus"></i></a></td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <?php }endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="section-header">
+                <h1 style="font-size: 16px;">Daftar Publish Artikel</h1>
+                <div class="section-header-breadcrumb">
+                    <a href="<?= base_url('pengumuman/tambahPengumuman') ?>" class="breadcrumb-item btn btn-primary" data-toggle="tooltip" data-placement="top" data-title="Buat Pengumuman Baru"><i class="fas fa-plus"></i> Tambah Data</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm" id="example">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Judul</th>
+                                <th>Isi</th>
+                                <th>Link</th>
+                                <th>Kategori</th>
+                                <th>Gambar</th>
+                                <th>Author</th>
+                                <th>Status</th>
+                                <th width="10%">Action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $i=1;
+                            foreach($postingan as $post): if($post["status"] == "publish"){ ?>
+                                <tr>
+                                    <td><?= $i++?></td>
+                                    <td><?= $post["judul_berita"]?></td>
+                                    <td><?= $post["isi"]?></td>
+                                    <td><?= base_url("viewArtikel/".$post["id_berita"])?></td>
+                                    <td><?= $post["nama_kategori"]?></td>
+                                    <td><?= $post["gambar"]?></td>
+                                    <td><?= $post["id_user"]?></td>
+                                    <td><?= $post["status"]?></td>
+                                    <td class="align-middle"><a href="<?= base_url('postingan/update') . '/' . $post['id_berita']; ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit" data-toggle="tooltip" data-placement="top" title="Edit"></i></a> <a href="#" data-href="<?= base_url('pengumuman/delete') . '/' . base64_encode($row['id']); ?>" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#konfirmasi_hapus"><i class="fas fa-trash" data-toggle="tooltip" data-placement="top" title="Hapus"></i></a></td>
+                                </tr>
+                            <?php }endforeach; ?>
                         </tbody>
                     </table>
                 </div>

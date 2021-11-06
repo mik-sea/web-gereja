@@ -30,13 +30,32 @@ class PostinganModels extends Model{
             "pager"=> $this->pager,
         ];
     }
-    public function getAllPostinganById($id_berita){
-        return $this->select(["{$this->table}.*", 'akun.username','akun.foto_profil'])
-        ->join('akun', "{$this->table}.id_user = akun.id_akun")
-        ->where("id_berita = '$id_berita' and status = 'publish'")->find();
+    public function getAllPostinganById($id_berita,$tipe){
+        if($tipe == "superadmin"){
+            return $this->select(["{$this->table}.*", 'akun.username','akun.foto_profil'])
+            ->join('akun', "{$this->table}.id_user = akun.id_akun")
+            ->where("id_berita = '$id_berita'")->find();
+        }else{
+            return $this->select(["{$this->table}.*", 'akun.username','akun.foto_profil'])
+            ->join('akun', "{$this->table}.id_user = akun.id_akun")
+            ->where("id_berita = '$id_berita' and status = 'publish'")->find();
+        }
     }
     public function getAllWithKategori(){
         return $this->select(["{$this->table}.*", 'kategori.nama_kategori'])
         ->join('kategori', "{$this->table}.id_kategori = kategori.id_kategori")->find();
+    }
+    public function getPostinganJustId($id_berita){
+        return $this->select(["{$this->table}.*", 'kategori.id_kategori'])
+        ->join('kategori', "{$this->table}.id_kategori = kategori.id_kategori")
+        ->where("id_berita = '$id_berita'")->find();
+    }
+    public function updatePostingan($data){
+        $query = $this->db->table("id_berita, id_user")->update($data, array('id' => $id));
+        return $query;
+    }
+    public function updateStatus($id){
+        $query = $this->db->table($this->table)->update(array('status'=>'publish'), array('id_berita' => $id));
+        return $query;
     }
 }

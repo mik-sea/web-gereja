@@ -15,7 +15,7 @@
                             <img src="<?= $artikel['gambar'];?>" alt="image artikel" width="500px" height="500px">
 							</div>
 							<h2 class="entry-title">
-								<a href="#"><?php echo $artikel["judul_berita"];?></a>
+								<a href="viewArtikel/<?= $artikel['id_berita']?>"><?php echo $artikel["judul_berita"];?></a>
 							</h2>
 							<div class="entry-meta">
 								<ul>

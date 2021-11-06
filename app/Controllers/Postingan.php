@@ -176,12 +176,88 @@ class Postingan extends BaseController
         return View("postingan/viewPostingan",$data);
     }
     public function viewArtikels($id_berita){
+        $tipe = $this->session->get("tipe");
+        if($tipe == "superadmin"){
+            $postinganModel = new PostinganModels();
+            $kategoriModel = new KategoriModel();
+            $data["artikel"] = $postinganModel->getAllPostinganById($id_berita,$tipe)[0];
+            $data["kategori"] = $kategoriModel->cekKategori();
+            $data["kategoriById"] = $kategoriModel->cekKategoriById($data["artikel"]["id_kategori"])[0];
+            // print_r($data["artikel"]);
+            return View("postingan/viewPostinganSingle",$data);
+        }else{
+            $postinganModel = new PostinganModels();
+            $kategoriModel = new KategoriModel();
+            $data["artikel"] = $postinganModel->getAllPostinganById($id_berita,"")[0];
+            $data["kategori"] = $kategoriModel->cekKategori();
+            $data["kategoriById"] = $kategoriModel->cekKategoriById($data["artikel"]["id_kategori"])[0];
+            // print_r($data["artikel"]);
+            return View("postingan/viewPostinganSingle",$data);
+        }
+    }
+    public function viewPostinganUpdate($id){
         $postinganModel = new PostinganModels();
-        $kategoriModel = new KategoriModel();
-        $data["artikel"] = $postinganModel->getAllPostinganById($id_berita)[0];
-        $data["kategori"] = $kategoriModel->cekKategori();
-        $data["kategoriById"] = $kategoriModel->cekKategoriById($data["artikel"]["id_kategori"])[0];
-        // print_r($data["artikel"]);
-        return View("postingan/viewPostinganSingle",$data);
+        $model = new KategoriModel();
+        $isiKategori = $model->cekKategori();
+        $data["res"] = $postinganModel->getPostinganJustId($id)[0];
+        $data["kategori"] = $isiKategori;
+        return View("superAdmin/editPostingan",$data);
+    }
+    public function postinganUpdate()
+    {
+        $id = $this->request->getVar("id");
+        $judul = $this->request->getVar("judul");
+        $thumbnail = $this->request->getFile("file");
+        $kategori = $this->request->getVar("kategori");
+        $jenis = $this->request->getVar("jenis");
+        $ringkasan = $this->request->getVar("ringkasan");
+        $isi = $this->request->getVar("isi");
+        $validated = $this->validate([
+            'file' => [
+                'uploaded[file]',
+                'mime_in[file,image/jpg,image/jpeg,image/gif,image/png]',
+            ],
+        ]);
+        if ($validated) {
+            if($thumbnail){
+                $thumbnail->move('../public/uploads');
+                $data = [
+                    'name' =>  "/uploads/".$thumbnail->getClientName(),
+                    'type'  => $thumbnail->getClientMimeType()
+                ];
+            }else{
+                $data["name"] = $this->request->getVar("old");
+            }
+            $data = [
+                "id_berita" => $id,
+                "id_user" => $this->session->get('id_akun'),
+                "id_kategori" => $kategori,
+                "slug_berita" => url_title($judul),
+                "judul_berita" => $judul,
+                "ringkasan" => $ringkasan,
+                "isi" => $isi,
+                "jenis_berita" => $jenis,
+                "gambar" => $data['name'],
+            ];
+            $cek = $postinganModel->updatePostingan($data);
+            $error = $cek->connID->error;
+            if ($error) {
+                $this->session->setFlashdata('errsql', 'error sql');
+                return redirect()->back();
+                // print_r($error);
+            } else {
+                return redirect()->to("/postingan");
+                // echo "ke else";
+            }
+        } else {
+            $this->session->setFlashdata('msgerr', 'Format gambar salah!');
+            return redirect()->back()->withInput();
+            // echo "hai";
+        }
+    }
+    public function postinganUpdateStatus($id_berita){
+        $postinganModel = new PostinganModels();
+        $postinganModel->updateStatus($id_berita);
+        return redirect()->to('/postingan');
     }
 }

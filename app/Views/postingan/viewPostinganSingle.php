@@ -2,6 +2,12 @@
 <?= $this->section('konten'); ?>
 
 <!-- ======= Blog Single Section ======= -->
+<?php
+if(!$artikel){
+    echo "<script>alert('artikel belum ada')</script>";
+    echo "<script>window.location.href = '/viewArtikel'</script>";
+}
+?>
 <section id="blog" class="blog">
     <div class="container" data-aos="fade-up">
         <div class="row">
