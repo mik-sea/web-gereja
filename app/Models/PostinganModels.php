@@ -50,8 +50,9 @@ class PostinganModels extends Model{
         ->join('kategori', "{$this->table}.id_kategori = kategori.id_kategori")
         ->where("id_berita = '$id_berita'")->find();
     }
-    public function updatePostingan($data){
-        $query = $this->db->table("id_berita, id_user")->update($data, array('id' => $id));
+    public function updatePostingan($data,$id){
+        $query = $this->db->table("postingan")->update($data, array('id_berita' => $id));
+        // print_r($query);
         return $query;
     }
     public function updateStatus($id){

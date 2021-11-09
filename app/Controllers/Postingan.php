@@ -177,17 +177,15 @@ class Postingan extends BaseController
     }
     public function viewArtikels($id_berita){
         $tipe = $this->session->get("tipe");
+        $postinganModel = new PostinganModels();
+        $kategoriModel = new KategoriModel();
         if($tipe == "superadmin"){
-            $postinganModel = new PostinganModels();
-            $kategoriModel = new KategoriModel();
             $data["artikel"] = $postinganModel->getAllPostinganById($id_berita,$tipe)[0];
             $data["kategori"] = $kategoriModel->cekKategori();
             $data["kategoriById"] = $kategoriModel->cekKategoriById($data["artikel"]["id_kategori"])[0];
             // print_r($data["artikel"]);
             return View("postingan/viewPostinganSingle",$data);
         }else{
-            $postinganModel = new PostinganModels();
-            $kategoriModel = new KategoriModel();
             $data["artikel"] = $postinganModel->getAllPostinganById($id_berita,"")[0];
             $data["kategori"] = $kategoriModel->cekKategori();
             $data["kategoriById"] = $kategoriModel->cekKategoriById($data["artikel"]["id_kategori"])[0];
@@ -208,10 +206,12 @@ class Postingan extends BaseController
         $id = $this->request->getVar("id");
         $judul = $this->request->getVar("judul");
         $thumbnail = $this->request->getFile("file");
+        $old_thumbnail = $this->request->getVar("old");
         $kategori = $this->request->getVar("kategori");
         $jenis = $this->request->getVar("jenis");
         $ringkasan = $this->request->getVar("ringkasan");
         $isi = $this->request->getVar("isi");
+        $postinganModel = new PostinganModels();
         $validated = $this->validate([
             'file' => [
                 'uploaded[file]',
@@ -226,7 +226,7 @@ class Postingan extends BaseController
                     'type'  => $thumbnail->getClientMimeType()
                 ];
             }else{
-                $data["name"] = $this->request->getVar("old");
+                $dataImage = $old_thumbnail;
             }
             $data = [
                 "id_berita" => $id,
@@ -237,9 +237,9 @@ class Postingan extends BaseController
                 "ringkasan" => $ringkasan,
                 "isi" => $isi,
                 "jenis_berita" => $jenis,
-                "gambar" => $data['name'],
+                "gambar" => $data['name']?$data['name']:$dataImage,
             ];
-            $cek = $postinganModel->updatePostingan($data);
+            $cek = $postinganModel->updatePostingan($data,$id);
             $error = $cek->connID->error;
             if ($error) {
                 $this->session->setFlashdata('errsql', 'error sql');
@@ -250,8 +250,38 @@ class Postingan extends BaseController
                 // echo "ke else";
             }
         } else {
-            $this->session->setFlashdata('msgerr', 'Format gambar salah!');
-            return redirect()->back()->withInput();
+            if($thumbnail != ""){
+                $thumbnail->move('../public/uploads');
+                $data = [
+                    'name' =>  "/uploads/".$thumbnail->getClientName(),
+                    'type'  => $thumbnail->getClientMimeType()
+                ];
+            }else{
+                $dataImage = $old_thumbnail;
+            }
+            $data =array (
+                "id_berita" => $id,
+                "id_user" => $this->session->get('id_akun'),
+                "id_kategori" => $kategori,
+                "slug_berita" => url_title($judul),
+                "judul_berita" => $judul,
+                "ringkasan" => $ringkasan,
+                "isi" => $isi,
+                "jenis_berita" => $jenis,
+                "gambar" => $data['name']?$data['name']:$dataImage,
+            );
+            $cek = $postinganModel->updatePostingan($data,$this->request->getVar("id"));
+            $error = $cek->connID->error;
+            if ($error) {
+                $this->session->setFlashdata('errsql', 'error sql');
+                return redirect()->back();
+                // print_r($error);
+            } else {
+                return redirect()->to("/postingan");
+                // echo "ke else";
+            }
+            // $this->session->setFlashdata('msgerr', 'Format gambar salah!');
+            // return redirect()->back()->withInput();
             // echo "hai";
         }
     }
