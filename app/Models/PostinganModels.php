@@ -59,4 +59,7 @@ class PostinganModels extends Model{
         $query = $this->db->table($this->table)->update(array('status'=>'publish'), array('id_berita' => $id));
         return $query;
     }
+    public function deletePostingan($id){
+        return $this->db->table("postingan")->where('id_berita', $id)->delete();
+    }
 }

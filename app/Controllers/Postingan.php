@@ -290,4 +290,9 @@ class Postingan extends BaseController
         $postinganModel->updateStatus($id_berita);
         return redirect()->to('/postingan');
     }
+    public function deletePostingans($id_berita){
+        $postinganModel = new PostinganModels();
+        $postinganModel->deletePostingan($id_berita);
+        return redirect()->to('/postingan');
+    }
 }
