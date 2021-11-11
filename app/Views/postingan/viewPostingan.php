@@ -27,7 +27,7 @@
 							<div class="entry-content">
 								<p><?php echo $artikel["ringkasan"];?></p>
 								<div class="read-more">
-									<a href="/viewArtikel/<?php echo $artikel['slug_berita'];?>">Read More</a>
+									<a href="viewArtikel/<?= $artikel['id_berita']?>">Read More</a>
 								</div>
 							</div>
 						</article><!-- End blog entry -->

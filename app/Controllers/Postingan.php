@@ -93,7 +93,7 @@ class Postingan extends BaseController
             $postinganModel = new PostinganModels();
             $id = $postinganModel->cekIdBerita() + 1;
             $data = [
-                "id_berita" => "b" . $id,
+                "id_berita" => $id . time(),
                 "id_user" => $this->session->get('id_akun'),
                 "id_kategori" => $kategori,
                 "slug_berita" => url_title($judul),
@@ -114,7 +114,7 @@ class Postingan extends BaseController
                 // print_r($error);
             } else {
                 $thumbnail->move('../public/uploads');
-                return redirect()->back();
+                return redirect()->to('/postingan');
                 // echo "ke else";
             }
         } else {

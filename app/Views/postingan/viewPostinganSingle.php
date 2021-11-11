@@ -21,8 +21,8 @@ if(!$artikel){
                     </h2>
                     <div class="entry-meta">
                     <ul>
-                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html"><?= $artikel["username"]?></a></li>
-                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="<?= $artikel['tanggal_publish']?>"><?= $artikel["tanggal_publish"]?></time></a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#"><?= $artikel["username"]?></a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime="<?= $artikel['tanggal_publish']?>"><?= $artikel["tanggal_publish"]?></time></a></li>
                         <!-- <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li> -->
                     </ul>
                 </div>

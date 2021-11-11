@@ -1,6 +1,6 @@
 <?php namespace App\Models;
 use CodeIgniter\Model;
-
+date_default_timezone_set("Asia/Jakarta");
 class PostinganModels extends Model{
     protected $table = "postingan";
     protected $allowedFields = ["id_berita","id_user","id_kategori","slug_berita","judul_berita","ringkasan","isi","jenis_berita","gambar","tanggal_post","tanggal_publish","status"];
@@ -56,7 +56,7 @@ class PostinganModels extends Model{
         return $query;
     }
     public function updateStatus($id){
-        $query = $this->db->table($this->table)->update(array('status'=>'publish'), array('id_berita' => $id));
+        $query = $this->db->table($this->table)->update(array('tanggal_publish'=>date("Y-m-d H:i:s"),'status'=>'publish'), array('id_berita' => $id));
         return $query;
     }
     public function deletePostingan($id){

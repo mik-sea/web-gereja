@@ -15,7 +15,7 @@
             <div class="section-header">
                 <h1 style="font-size: 16px;">Daftar Tunggu Artikel</h1>
                 <div class="section-header-breadcrumb">
-                    <a href="<?= base_url('pengumuman/tambahPengumuman') ?>" class="breadcrumb-item btn btn-primary" data-toggle="tooltip" data-placement="top" data-title="Buat Pengumuman Baru"><i class="fas fa-plus"></i> Tambah Data</a>
+                    <a href="<?= base_url('/tambahPostingan') ?>" class="breadcrumb-item btn btn-primary" data-toggle="tooltip" data-placement="top" data-title="Buat Postingan Baru"><i class="fas fa-plus"></i> Tambah Data</a>
                 </div>
             </div>
             <div class="card-body">
@@ -75,7 +75,7 @@
             <div class="section-header">
                 <h1 style="font-size: 16px;">Daftar Publish Artikel</h1>
                 <div class="section-header-breadcrumb">
-                    <a href="<?= base_url('pengumuman/tambahPengumuman') ?>" class="breadcrumb-item btn btn-primary" data-toggle="tooltip" data-placement="top" data-title="Buat Pengumuman Baru"><i class="fas fa-plus"></i> Tambah Data</a>
+                    <a href="<?= base_url('/tambahPostingan') ?>" class="breadcrumb-item btn btn-primary" data-toggle="tooltip" data-placement="top" data-title="Buat Postingan Baru"><i class="fas fa-plus"></i> Tambah Data</a>
                 </div>
             </div>
             <div class="card-body">
