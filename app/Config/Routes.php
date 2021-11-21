@@ -60,7 +60,6 @@ $routes->get('/postingan/update/(:any)','Postingan::viewPostinganUpdate/$1');
 $routes->post('/postingan/update','Postingan::postinganUpdate');
 $routes->get('/update/status/(:any)','Postingan::postinganUpdateStatus/$1');
 $routes->get('/delete/postingan/(:any)','Postingan::deletePostingans/$1');
-$routes->get('/gallery','Gallery::viewAllGallery');
 
 $routes->get('/logout', 'Home::logout');
 /**

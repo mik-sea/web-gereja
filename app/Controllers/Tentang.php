@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\PostinganModels;
 
 class Tentang extends BaseController
 {
@@ -60,9 +61,12 @@ class Tentang extends BaseController
 
     public function gallery()
     {
+        $postinganModels = new PostinganModels();
         $data = [
             'title' => 'Gallery',
-            'active' => 'gallery'
+            'active' => 'gallery',
+            "postingan" => $postinganModel->getAllPostingan()["data"],
+            "pager" => $postinganModel->getAllPostingan()["pager"]
         ];
         return view('tentang/gallery', $data);
     }

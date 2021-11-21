@@ -34,12 +34,6 @@ if(!$artikel){
                     <ul class="cats">
                     <li><a href="#"><?= $kategoriById["nama_kategori"]?></a></li>
                 </ul>
-                <i class="bi bi-tags"></i>
-                <ul class="tags">
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">Tips</a></li>
-                    <li><a href="#">Marketing</a></li>
-                </ul>
             </div>
         </article><!-- End blog entry -->
         <div class="blog-author d-flex align-items-center">
