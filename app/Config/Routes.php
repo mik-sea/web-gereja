@@ -54,7 +54,7 @@ $routes->get('/addKategori', 'Postingan::addKategori');
 $routes->post('/addKategoris', 'Postingan::toKategori');
 $routes->get('/addJenis', 'Postingan::addJenis');
 $routes->post('/addJeniss', 'Postingan::addJenisKategori');
-$routes->get('/viewArtikel', 'Postingan::viewArtikel');
+$routes->get('/artikel', 'Postingan::viewArtikel');
 $routes->get('/viewArtikel/(:any)', 'Postingan::viewArtikels/$1');
 $routes->get('/postingan/update/(:any)','Postingan::viewPostinganUpdate/$1');
 $routes->post('/postingan/update','Postingan::postinganUpdate');

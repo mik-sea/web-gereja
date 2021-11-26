@@ -169,6 +169,8 @@ class Postingan extends BaseController
     public function viewArtikel(){
         $postinganModel = new PostinganModels();
         $kategoriModel = new KategoriModel();
+        $data["title"] = "Artikel";
+        $data["active"] = "artikel";
         $data["postingan"] = $postinganModel->getAllPostingan()["data"];
         $data["pager"] = $postinganModel->getAllPostingan()["pager"];
         $data["kategori"] = $kategoriModel->cekKategori();
@@ -179,6 +181,8 @@ class Postingan extends BaseController
         $tipe = $this->session->get("tipe");
         $postinganModel = new PostinganModels();
         $kategoriModel = new KategoriModel();
+        $data["title"] = "Artikel";
+        $data["active"] = "artikel";
         if($tipe == "superadmin"){
             $data["artikel"] = $postinganModel->getAllPostinganById($id_berita,$tipe)[0];
             $data["kategori"] = $kategoriModel->cekKategori();

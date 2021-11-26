@@ -19,16 +19,27 @@ class PostinganModels extends Model{
         $query = $this->db->table("postingan")->findAll();
         return $query;
     }
-    public function getAllPostingan(){
-        $this->builder()
-             ->select(["{$this->table}.*", 'akun.username'])
-             ->join('akun', "{$this->table}.id_user = akun.id_akun")
-             ->where("status='publish'");
-        // $this->db->query("select p.* a.username from postingan p inner join akun a on p.id_user=a.id_akun")->getResult();
-        return [
-            "data"=> $this->paginate(5,"postingan"),
-            "pager"=> $this->pager,
-        ];
+    public function getAllPostingan($tab = ""){
+        if($tab == "gallery"){
+            $this->builder()
+                ->select(["{$this->table}.*", 'akun.username'])
+                ->join('akun', "{$this->table}.id_user = akun.id_akun")
+                ->where("status='publish'");
+            return [
+                "data"=> $this->paginate(5,"postingan"),
+                "pager"=> $this->pager,
+            ];
+        }else{
+            $this->builder()
+                ->select(["{$this->table}.*", 'akun.username'])
+                ->join('akun', "{$this->table}.id_user = akun.id_akun")
+                ->where("status='publish'");
+            // $this->db->query("select p.* a.username from postingan p inner join akun a on p.id_user=a.id_akun")->getResult();
+            return [
+                "data"=> $this->paginate(5,"postingan"),
+                "pager"=> $this->pager,
+            ];
+        }
     }
     public function getAllPostinganById($id_berita,$tipe){
         if($tipe == "superadmin"){
