@@ -68,8 +68,7 @@ class Tentang extends BaseController
             "data" => $postinganModel->getAllPostingan("gallery")["data"],
             "pager" => $postinganModel->getAllPostingan("gallery")["pager"]
         ];
-        print_r($data["data"]);
-        // return view('tentang/gallery', $data);
+        return view('tentang/gallery', $data);
     }
 
     public function keanggotaan()

@@ -32,12 +32,17 @@
                         <div class="portfolio-wrap">
                             <img src="<?= $gallery['gambar']?>" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4><?= $gallery['judul']?></h4>
-                                <p><?= $gallery['ringkasan']?></p>
+                                <p><?= $gallery['judul_berita']?></p>
+                                <?php if($gallery["tipe_postingan"] == "berita"){ ?>
                                 <div class="portfolio-links">
-                                    <a href="/templateUser/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                    <a href="/viewArtikel/<?= $gallery['id_berita']?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                                    <a href="/viewArtikel/<?= $gallery['id_berita']?>" title="More Details"><i class="bx bx-link"></i></a>
                                 </div>
+                                <?php } else if($gallery["tipe_postingan"] == "gallery"){?>
+                                    <div class="portfolio-links">
+                                        <a href="/viewArtikel/<?= $gallery['id_berita']?>" title="More Details"><i class="bx bx-link"></i></a>
+                                    </div>
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -46,17 +51,7 @@
             </div>
         </section><!-- End Portfolio Section -->
         <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
+            <?php echo $pager->links("gallery","bootstrap_pagination");?>
         </nav>
     </div>
 </section><!-- End Featured Section -->

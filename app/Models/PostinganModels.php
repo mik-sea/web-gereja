@@ -26,7 +26,7 @@ class PostinganModels extends Model{
                 ->join('akun', "{$this->table}.id_user = akun.id_akun")
                 ->where("status='publish'");
             return [
-                "data"=> $this->paginate(5,"postingan"),
+                "data"=> $this->paginate(5,"gallery"),
                 "pager"=> $this->pager,
             ];
         }else{
